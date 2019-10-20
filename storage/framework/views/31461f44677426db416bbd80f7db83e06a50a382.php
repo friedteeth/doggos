@@ -29,6 +29,9 @@
                                 <td>
                                     <div><?php echo e($perro->descripcion); ?></div>
                                 </td>
+                                <td>
+                                    <img src="storage/crying.jpg" style="width: 100px;">
+                                </td>
                             </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>

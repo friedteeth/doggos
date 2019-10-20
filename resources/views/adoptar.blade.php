@@ -31,6 +31,9 @@
                                 <td>
                                     <div>{{ $perro->descripcion }}</div>
                                 </td>
+                                <td>
+                                    <img src="storage/crying.jpg" style="width: 100px;">
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
