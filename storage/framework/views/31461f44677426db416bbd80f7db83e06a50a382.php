@@ -15,6 +15,7 @@
                     <thead>
                         <th>Perro</th>
                         <th>Decripcion</th>
+                        <th>Imagen</th>
                     </thead>
 
                     <!-- Table Body -->
@@ -23,11 +24,11 @@
                             <tr>
                                 <!-- Task Name -->
                                 <td class="table-text">
-                                    <div><?php echo e($perro->nombre); ?></div>
+                                    <div><?php echo e($perro->nombre_perro); ?></div>
                                 </td>
 
                                 <td>
-                                    <div><?php echo e($perro->descripcion); ?></div>
+                                    <div><?php echo e($perro->descripcion_perro); ?></div>
                                 </td>
                                 <td>
                                     <img src="storage/crying.jpg" style="width: 100px;">

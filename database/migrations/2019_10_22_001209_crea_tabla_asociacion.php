@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreaTablaPerro extends Migration
+class CreaTablaAsociacion extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreaTablaPerro extends Migration
      */
     public function up()
     {
-        Schema::create('perros', function (Blueprint $table) {
-            $table->bigIncrements('id_perro');
-            $table->string('nombre_perro');
-            $table->string('descripcion_perro');
-            $table->string('imagen_perro')->nullable();
-            
+        Schema::create('asociacions', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nombre_asociacion');
+            $table->string('desc_asociacion');
+            $table->string('imagen_asociacion');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreaTablaPerro extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('perros');
+        Schema::dropIfExists('asociacions');
     }
 }

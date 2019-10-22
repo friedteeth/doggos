@@ -41,12 +41,12 @@ Route::post('/adopcion', function (Request $request) {
     }
 
     $perro = new Perro;
-    $perro->nombre = $request->nombre;
-    $perro->descripcion = $request->descripcion;
+    $perro->nombre_perro = $request->nombre;
+    $perro->descripcion_perro = $request->descripcion;
     $perro->save();
 
     return view('adopcion', [
-        'nombre' => $perro->nombre
+        'nombre' => $perro->nombre_perro
     ]);
 });
 

@@ -17,6 +17,7 @@
                     <thead>
                         <th>Perro</th>
                         <th>Decripcion</th>
+                        <th>Imagen</th>
                     </thead>
 
                     <!-- Table Body -->
@@ -25,11 +26,11 @@
                             <tr>
                                 <!-- Task Name -->
                                 <td class="table-text">
-                                    <div>{{ $perro->nombre }}</div>
+                                    <div>{{ $perro->nombre_perro }}</div>
                                 </td>
 
                                 <td>
-                                    <div>{{ $perro->descripcion }}</div>
+                                    <div>{{ $perro->descripcion_perro }}</div>
                                 </td>
                                 <td>
                                     <img src="storage/crying.jpg" style="width: 100px;">
