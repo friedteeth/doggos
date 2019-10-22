@@ -2,10 +2,10 @@
 
 <div class="container-fluid">
   
-  <?php if(count($perros) > 0): ?>
+  
         <div class="panel panel-default">
             <div class="panel-heading">
-                Perros en adopcion
+                Este es un perro unico
             </div>
 
             <div class="panel-body">
@@ -16,12 +16,10 @@
                         <th>Perro</th>
                         <th>Decripcion</th>
                         <th>Imagen</th>
-                        <th></th>
                     </thead>
 
                     <!-- Table Body -->
                     <tbody>
-                        <?php $__currentLoopData = $perros; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $perro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                 <!-- Task Name -->
                                 <td class="table-text">
@@ -34,22 +32,26 @@
                                 <td>
                                     <img src="<?php echo e(url('storage/'.$perro->imagen_perro)); ?>" style="width: 100px;">
                                 </td>
-                                <td>
-                                <a class="btn btn-primary" href="<?php echo e(url('adoptar/'.$perro->id)); ?>">Mas informacion</a>
-                                </td>
                             </tr>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
                 </table>
+                <a href="" class="btn btn-primary">Conocelo Ahora!</a>
+                <div>
+                    <h2>Informacion de contacto:</h2>
+                    <h4><?php echo e($adopcion->telefono_dueno); ?></h4>
+                    <h2>Nombre:</h2>
+                    <p>
+                    <?php echo e($adopcion->nombre_dueno); ?>
+
+                    <?php echo e($adopcion->apellidos_dueno); ?>
+
+                </p>
+                </div>
             </div>
         </div>
-    <?php else: ?>
-        <div class="panel panel-default">
-            <h3>Aun no hay perro en adopcion viejo.</h3>
-        </div>
-    <?php endif; ?>
+    
 
 </div>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\loera\laravel\adopta_mi_perro\resources\views/adoptar.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\loera\laravel\adopta_mi_perro\resources\views/adoptar_perro.blade.php ENDPATH**/ ?>

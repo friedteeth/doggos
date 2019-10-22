@@ -226,13 +226,13 @@ a:focus {
 
       <ul class="list-unstyled components">
         <li>
-          <a href="form_adopcion">Da en Adopci&oacute;n</a>
+        <a href="<?php echo e(url('form_adopcion')); ?>">Da en Adopci&oacute;n</a>
         </li>
         <li>
-          <a href="adoptar">Adopta</a>
+          <a href="<?php echo e(url('adoptar')); ?>">Adopta</a>
         </li>
         <li>
-          <a href="asociacion">Asociaciones</a>
+          <a href="<?php echo e(url('asociacion')); ?>">Asociaciones</a>
         </li>
       </ul>
 
@@ -255,7 +255,7 @@ a:focus {
         </div>
       </nav>
 
-      <div id="child-content">
+      <div class="container" id="child-content">
         <?php echo $__env->yieldContent('content'); ?>
       </div>
 

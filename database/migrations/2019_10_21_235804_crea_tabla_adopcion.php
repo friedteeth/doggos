@@ -14,10 +14,10 @@ class CreaTablaAdopcion extends Migration
     public function up()
     {
         Schema::create('adopcions', function (Blueprint $table) {
-            $table->bigIncrements('id_adopcion');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('id_perro');
             $table->foreign('id_perro')
-                ->references('id_perro')
+                ->references('id')
                 ->on('perros');
             $table->string('nombre_dueno');
             $table->string('apellidos_dueno');

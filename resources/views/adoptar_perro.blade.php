@@ -4,10 +4,10 @@
 
 <div class="container-fluid">
   
-  @if (count($perros) > 0)
+  {{-- @if (count($perro)) --}}
         <div class="panel panel-default">
             <div class="panel-heading">
-                Perros en adopcion
+                Este es un perro unico
             </div>
 
             <div class="panel-body">
@@ -18,12 +18,10 @@
                         <th>Perro</th>
                         <th>Decripcion</th>
                         <th>Imagen</th>
-                        <th></th>
                     </thead>
 
                     <!-- Table Body -->
                     <tbody>
-                        @foreach ($perros as $perro)
                             <tr>
                                 <!-- Task Name -->
                                 <td class="table-text">
@@ -36,20 +34,22 @@
                                 <td>
                                     <img src="{{ url('storage/'.$perro->imagen_perro) }}" style="width: 100px;">
                                 </td>
-                                <td>
-                                <a class="btn btn-primary" href="{{ url('adoptar/'.$perro->id) }}">Mas informacion</a>
-                                </td>
                             </tr>
-                        @endforeach
                     </tbody>
                 </table>
+                <a href="" class="btn btn-primary">Conocelo Ahora!</a>
+                <div>
+                    <h2>Informacion de contacto:</h2>
+                    <h4>{{ $adopcion->telefono_dueno }}</h4>
+                    <h2>Nombre:</h2>
+                    <p>
+                    {{ $adopcion->nombre_dueno }}
+                    {{ $adopcion->apellidos_dueno }}
+                </p>
+                </div>
             </div>
         </div>
-    @else
-        <div class="panel panel-default">
-            <h3>Aun no hay perro en adopcion viejo.</h3>
-        </div>
-    @endif
+    {{-- @endif --}}
 
 </div>
 

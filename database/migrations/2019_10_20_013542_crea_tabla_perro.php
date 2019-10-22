@@ -14,7 +14,7 @@ class CreaTablaPerro extends Migration
     public function up()
     {
         Schema::create('perros', function (Blueprint $table) {
-            $table->bigIncrements('id_perro');
+            $table->bigIncrements('id');
             $table->string('nombre_perro');
             $table->string('descripcion_perro');
             $table->string('imagen_perro')->nullable();
