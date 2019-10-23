@@ -25,10 +25,9 @@
               <div><?php echo e($asociacion->desc_asociacion); ?></div>
           </td>
           <td>
-              <img src="/storage/app/public/asociaciones/imagenes/DogLove.jpg" width="80" height="80">
-              <img src=<?php echo e(asset('asociacioes/imagenes/2.png')); ?> alt="">
-             <!-- <img src="<?php echo e(url('storage/'.$asociacion->imagen_asociacion)); ?>" style="width: 100px;"> -->
+            <img src="<?php echo e(url('storage/'.$asociacion->imagen_asociacion)); ?>" style="width: 100px;">
           </td>
+
           <td>
           <a class="btn btn-primary" href="<?php echo e(url('asociacion/'.$asociacion->id)); ?>">Mas informacion</a>
           </td>

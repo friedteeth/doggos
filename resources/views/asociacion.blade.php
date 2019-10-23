@@ -27,10 +27,9 @@
               <div>{{ $asociacion->desc_asociacion }}</div>
           </td>
           <td>
-              <img src="/storage/app/public/asociaciones/imagenes/DogLove.jpg" width="80" height="80">
-              <img src={{asset('asociacioes/imagenes/2.png')}} alt="">
-             <!-- <img src="{{ url('storage/'.$asociacion->imagen_asociacion) }}" style="width: 100px;"> -->
+            <img src="{{ url('storage/'.$asociacion->imagen_asociacion) }}" style="width: 100px;">
           </td>
+
           <td>
           <a class="btn btn-primary" href="{{ url('asociacion/'.$asociacion->id) }}">Mas informacion</a>
           </td>
