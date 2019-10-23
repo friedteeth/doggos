@@ -21,7 +21,11 @@ Route::get('/', function () {
 });
 
 Route::get('/asociacion', function () {
-    return view('asociacion');
+    $asociacion = Asociacion::all();
+    
+    return view('asociacion', [
+        'asociacion' => $asociacion
+    ]);
 });
 
 Route::get('/asociacion/{id}', function () {
