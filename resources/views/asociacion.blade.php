@@ -11,7 +11,6 @@
         <!-- Table Headings -->
         <thead>
             <th>Nombre</th>
-            <th>Decripcion</th>
             <th>Imagen</th>
             <th></th>
         </thead>
@@ -22,9 +21,6 @@
           <!-- Task Name -->
           <td class="table-text">
               <div>{{ $asociacion->nombre_asociacion }}</div>
-          </td>
-          <td>
-              <div>{{ $asociacion->desc_asociacion }}</div>
           </td>
           <td>
             <img src="{{ url('storage/'.$asociacion->imagen_asociacion) }}" style="width: 100px;">

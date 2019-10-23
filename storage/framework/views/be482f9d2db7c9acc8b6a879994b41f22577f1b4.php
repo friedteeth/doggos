@@ -9,7 +9,6 @@
         <!-- Table Headings -->
         <thead>
             <th>Nombre</th>
-            <th>Decripcion</th>
             <th>Imagen</th>
             <th></th>
         </thead>
@@ -20,9 +19,6 @@
           <!-- Task Name -->
           <td class="table-text">
               <div><?php echo e($asociacion->nombre_asociacion); ?></div>
-          </td>
-          <td>
-              <div><?php echo e($asociacion->desc_asociacion); ?></div>
           </td>
           <td>
             <img src="<?php echo e(url('storage/'.$asociacion->imagen_asociacion)); ?>" style="width: 100px;">
