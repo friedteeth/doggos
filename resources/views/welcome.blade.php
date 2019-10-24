@@ -46,10 +46,6 @@
     <a href="{{ url('adoptar') }}" class="btn btn-xl logins">Buscalo ya</a>
     </div>
   </div>
-  
-  <div class="row text-primary">
-    Vamis a darle
-  </div>
 
 </div>
 
