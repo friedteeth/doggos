@@ -2,45 +2,64 @@
 
 @section('content')
 
-<div class="container-fluid">
+<div class="container-fluid d-flex justify-content-center">
 
-    
-  @include('common.errors')
+  <div class="card w-50">
 
-  <form action="/adopcion" method="post" class="form-horizontal" enctype="multipart/form-data">
-    {{ csrf_field() }}
+    <h5 class="card-header text-center">
+      ¡Conozcamonos!
+    </h5>
 
-    <div class="form-group row">
-      <div class="col">
-        <h2>Informacion tuya</h2>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre_dueno" id="nombre-dueno" class="form-control">
-        <label for="nombre">Apellidos:</label>
-        <input type="text" name="apellidos_dueno" id="apellidos-dueno" class="form-control">
-        <label for="nombre">Telefono:</label>
-        <input type="text" name="telefono_dueno" id="telefono-dueno" class="form-control">
-        <label for="nombre">Motivo:</label>
-        <input type="text" name="motivo" id="motivo" class="form-control">
-      </div>
-      <div class="col">
-        <h2>Informacion del perro</h2>
+    <div class="card-body">
+
+      <form action="{{ url('adopcion') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <h5>Datos Personales</h5>
+        <br>
+        
+        <label for="nombreDueno">Nombre:</label>
+        <input type="text" name="nombre_dueno" id="nombreDueno" class="form-control">
+              
+        <label for="apellidosDueno">Apellidos:</label>
+        <input type="text" name="apellidos_dueno" id="apellidosDueno" class="form-control">
+
+        <label for="motivoAdopcion">Adopcion:</label>
+        <input type="text" name="motivo" id="motivoAdopcion" class="form-control">
+
+        <br>
+        <h5>Datos de Contacto</h5>
+        <br>
+        
+        <label for="telefonoDueno">Telefono:</label>
+        <input type="text" name="telefono_dueno" id="telefonoDueno" class="form-control">
+        
+        <br>
+        <h5>Datos del Perro</h5>
+        <br>
+        
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre_perro" id="nombre-perro" class="form-control">
         <label for="descripcion">Descripcion:</label>
         <input type="text" name="descripcion_perro" id="descripcion-perro" class="form-control">
         <label for="imagen">Imagen:</label>
         <input type="file" name="imagen_perro" id="imagen-perro" class="form-control">
-      </div>
+        
+        <div class="form-gorup">
+          <button type="submit" class="btn btn-dark">
+            Dar en adopcion
+          </button>
+        </div>
+    
+      </form>
+
     </div>
 
-    <div class="form-gorup">
-      <button type="submit" class="btn btn-dark">
-        Dar en adopcion
-      </button>
-    </div>
+  </div>
 
-  </form>
+    
+  @include('common.errors')
+
 
 </div>
-
+  
 @endsection

@@ -25,7 +25,7 @@
                             <tr>
                                 <!-- Task Name -->
                                 <td class="table-text">
-                                    <div><?php echo e($perro->nombre_perro); ?></div>
+                                <div><?php echo e($perro->nombre_perro); ?></div>
                                 </td>
 
                                 <td>

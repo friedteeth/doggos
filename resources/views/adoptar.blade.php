@@ -27,7 +27,7 @@
                             <tr>
                                 <!-- Task Name -->
                                 <td class="table-text">
-                                    <div>{{ $perro->nombre_perro }}</div>
+                                <div>{{ $perro->nombre_perro }}</div>
                                 </td>
 
                                 <td>

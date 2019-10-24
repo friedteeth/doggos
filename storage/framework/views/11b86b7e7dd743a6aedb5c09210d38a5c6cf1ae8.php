@@ -39,15 +39,21 @@
   <style>
       
 @import  "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-repeat: no-repeat;
-    background-size: 100%;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .wrapper {
     display: flex;
     width: 100%;
+    height: 100%;
     /* align-items: stretch; */
 }
 
@@ -69,6 +75,19 @@ body {
     font-size: 18px;
 }
 
+.logins {
+  color: #1F6834;
+  border: 2px solid #1F6834;
+  border-radius: 40px;
+  transition: all 0.3s;
+}
+
+.logins:hover {
+  color: white;
+  background: #1F6834;
+}
+
+
 #sidebarCollapse {
   color: #FFF;
   background: #5FA874;
@@ -88,37 +107,35 @@ a:focus {
 }
 
 #sidebar {
-  width: 310px;
+  width: 260px;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   z-index: 999;
   background: #5FA874;
   color: #FFF;
   transition: all 0.3s;
 }
 
-#sidebar.active {
-    margin-left: -310px;
+#right-item {
+  margin-right: 260px;
+  transition: all 0.3s;
 }
 
+#sidebar.active {
+    margin-left: -260px;
+}
+
+#right-item.active {
+  margin-right: 0;
+}
 
 #sidebar .sidebar-header {
     text-align: center;
     background: #408955;
-}
-
-#sidebar .sidebar-header a {
-    display: block;
-}
-
-#sidebar .sidebar-header h1 {
-    padding-top: 15px;
-    padding-bottom: 5px;
-    text-align: center;
-    display: inline-block;
-    background: #408955;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #sidebar .sidebar-subheader {
@@ -151,6 +168,7 @@ a:focus {
 }
 
 #topbar {
+  z-index: 9999;
   position: fixed;
   top: 0;
   width: 100%;
@@ -159,8 +177,10 @@ a:focus {
 
 #content {
   transition: all 0.3s;
-  margin-left: 310px;
+  margin-left: 260px;
   padding-top: 40px;
+  /* height: 100hv; */
+  width: 100%;
 }
 
 #content.active {
@@ -168,21 +188,24 @@ a:focus {
 }
 
 #child-content {
-  padding-top: 50px;
+  padding-top: 25px;
 }
+
+<?php echo $__env->yieldContent('styles'); ?>
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
     #sidebar {
-      margin-left: -310px;
+      margin-left: -260px;
     }
     #sidebar.active {
         margin-left: 0;
     }
     #content.active {
-      margin-left: 310px;
+      margin-left: 260px;
     }
     #content {
       margin-left: 0;
@@ -214,9 +237,10 @@ a:focus {
     <nav id="sidebar">
 
       <div class="sidebar-header">
-        <a href="/">
+        <a href="<?php echo e(url('/')); ?>" class="d-block h-100">
           <i class="fas fa-dog fa-3x"></i>
-          <h1>Adopta Zac.</h1>
+          <h1>Adopta</h1>
+          <h2>mi perro</h2>
         </a>
       </div>
 
@@ -226,7 +250,7 @@ a:focus {
 
       <ul class="list-unstyled components">
         <li>
-        <a href="<?php echo e(url('form_adopcion')); ?>">Da en Adopci&oacute;n</a>
+        <a href="<?php echo e(url('adopcion')); ?>">Da en Adopci&oacute;n</a>
         </li>
         <li>
           <a href="<?php echo e(url('adoptar')); ?>">Adopta</a>
@@ -241,26 +265,30 @@ a:focus {
     </nav>
     <!-- Fin de Barra de Navegacion -->
 
-
-
     <!-- Contenido -->
     <div id="content">
-      <nav class="navbar" id="topbar">
-        <div class="container-fluid">
+      
+      <nav class="navbar navbar-default navbar-fixed-top" id="topbar">
 
-          <button type="button" id="sidebarCollapse" class="btn btn-circle">
-              <i class="fas fa-align-left"></i>
-          </button>
+        <button type="button" id="sidebarCollapse" class="btn btn-circle nav-item">
+            <i class="fas fa-align-left"></i>
+        </button>
 
+        <div id="right-item">
+          <a class="btn btn-sm logins" href="<?php echo e(url('storage/inicia_sesion')); ?>">Inicia Sesion</a>
+          <a class="btn btn-sm logins" href="<?php echo e(url('storage/registro')); ?>">Registrate</a>
         </div>
+
       </nav>
 
-      <div class="container" id="child-content">
+      <div id="child-content">
         <?php echo $__env->yieldContent('content'); ?>
       </div>
 
     </div>
     <!-- Fin de Contenido -->
+
+    
 
   </div>
   <!-- Fin de Envoltorio -->
@@ -275,11 +303,10 @@ a:focus {
 
       $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
+        $('#content').toggleClass('active');
+        $('#right-item').toggleClass('active');
       });
 
-      $('#sidebarCollapse').on('click', function () {
-        $('#content').toggleClass('active');
-      });
 
     });
   </script>
