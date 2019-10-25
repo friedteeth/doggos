@@ -1,65 +1,112 @@
 @extends('main')
 
+@section('styles')
+
+#content {
+    background: linear-gradient(rgba(22, 22, 22, 0.3), rgba(238, 238, 238, 1)), url('storage/stock/form_bg.jpg');
+    /* background: url('storage/stock/main_bg.jpg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#child-content {
+  height: 100%;
+}
+
+#main-title {
+  padding-top: 210px;
+  opacity: 0.9; 
+}
+
+.big-font {
+  font-size: 3rem;
+}
+
+
+body {
+  background: #EEEEEE;
+}
+
+@endsection
+
 @section('content')
 
-<div class="container-fluid d-flex justify-content-center">
+<div class="container h-100" id="page-container">
 
-  <div class="card w-50">
+  <div class="row h-100 text-center">
 
-    <h5 class="card-header text-center">
-      ¡Conozcamonos!
-    </h5>
+    <div class="col-5 offset-1" id="main-title">
 
-    <div class="card-body">
-
-      <form action="{{ url('adopcion') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <h5>Datos Personales</h5>
-        <br>
-        
-        <label for="nombreDueno">Nombre:</label>
-        <input type="text" name="nombre_dueno" id="nombreDueno" class="form-control">
-              
-        <label for="apellidosDueno">Apellidos:</label>
-        <input type="text" name="apellidos_dueno" id="apellidosDueno" class="form-control">
-
-        <label for="motivoAdopcion">Adopcion:</label>
-        <input type="text" name="motivo" id="motivoAdopcion" class="form-control">
-
-        <br>
-        <h5>Datos de Contacto</h5>
-        <br>
-        
-        <label for="telefonoDueno">Telefono:</label>
-        <input type="text" name="telefono_dueno" id="telefonoDueno" class="form-control">
-        
-        <br>
-        <h5>Datos del Perro</h5>
-        <br>
-        
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre_perro" id="nombre-perro" class="form-control">
-        <label for="descripcion">Descripcion:</label>
-        <input type="text" name="descripcion_perro" id="descripcion-perro" class="form-control">
-        <label for="imagen">Imagen:</label>
-        <input type="file" name="imagen_perro" id="imagen-perro" class="form-control">
-        
-        <div class="form-gorup">
-          <button type="submit" class="btn btn-dark">
-            Dar en adopcion
-          </button>
-        </div>
-    
-      </form>
+      <h1 class="text-black big-font">
+        ¡Te podemos ayudar!
+      </h1>
 
     </div>
-
   </div>
 
-    
-  @include('common.errors')
-
-
+  <div class="row">
+    <div class="col-8 offset-2">
+        <form action="{{ url('adopcion') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
+          {{ csrf_field() }}
+          @include('common.errors')
+          <br>
+          <div class="card rounded-lg shadow">
+            <div class="card-header">
+              <h3>Datos Personales</h3>
+            </div>
+            <div class="card-body">
+              <label for="nombreDueno">Nombre:</label>
+              <input type="text" name="nombre_dueno" id="nombreDueno" class="form-control">
+                    
+              <label for="apellidosDueno">Apellidos:</label>
+              <input type="text" name="apellidos_dueno" id="apellidosDueno" class="form-control">
+      
+              <label for="motivoAdopcion">Motivo:</label>
+              <textarea name="motivo" id="motivoAdopcion" class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+          <br>
+          <div class="card rounded-lg shadow">
+            <div class="card-header">
+              <h3>Datos de Contacto</h3>
+            </div>
+            <div class="card-body">
+                <label for="telefonoDueno">Telefono:</label>
+                <input type="text" name="telefono_dueno" id="telefonoDueno" class="form-control">
+            </div>
+          </div>
+          <br>
+          <div class="card rounded-lg shadow">
+            <div class="card-header">
+              <h3>Datos del Perro</h3>
+            </div>
+            <div class="card-body">
+              <label for="nombre">Nombre:</label>
+              <input type="text" name="nombre_perro" id="nombre-perro" class="form-control">
+              <label for="descripcion">Descripcion:</label>
+              <textarea name="descripcion_perro" id="descripcion-perro" class="form-control" rows="3"></textarea>
+              <label for="imagen">Imagen:</label>
+              <div class="custom-file">
+                <input type="file" name="imagen_perro" id="imagen-perro" class="custon-file-input">
+              </div>
+              
+            </div>
+          </div>
+          <br>
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-xl logins shadow">
+              Dar en adopcion
+            </button>
+          </div>
+      
+        </form>
+    </div>
+  </div>
 </div>
+    
+  
+
   
 @endsection
