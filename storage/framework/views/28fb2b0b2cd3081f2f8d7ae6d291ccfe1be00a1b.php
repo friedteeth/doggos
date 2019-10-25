@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 
 <head>
 
@@ -38,7 +38,7 @@
   <!-- Personal styles -->
   <style>
       
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import  "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -191,7 +191,7 @@ a:focus {
   padding-top: 25px;
 }
 
-@yield('styles')
+<?php echo $__env->yieldContent('styles'); ?>
 
 /* ---------------------------------------------------
     MEDIAQUERIES
@@ -239,7 +239,7 @@ a:focus {
     <nav id="sidebar">
 
       <div class="sidebar-header">
-        <a href="{{ url('/') }}" class="d-block h-100">
+        <a href="<?php echo e(url('/')); ?>" class="d-block h-100">
           <i class="fas fa-dog fa-3x"></i>
           <h1>Adopta</h1>
           <h2>mi perro</h2>
@@ -252,13 +252,13 @@ a:focus {
 
       <ul class="list-unstyled components">
         <li>
-        <a href="{{ url('adopcion') }}">Da en Adopci&oacute;n</a>
+        <a href="<?php echo e(url('adopcion')); ?>">Da en Adopci&oacute;n</a>
         </li>
         <li>
-          <a href="{{ url('adoptar') }}">Adopta</a>
+          <a href="<?php echo e(url('adoptar')); ?>">Adopta</a>
         </li>
         <li>
-          <a href="{{ url('asociacion') }}">Asociaciones</a>
+          <a href="<?php echo e(url('asociacion')); ?>">Asociaciones</a>
         </li>
       </ul>
 
@@ -277,14 +277,14 @@ a:focus {
         </button>
 
         <div id="right-item">
-          <a class="btn btn-sm logins" href="{{ url('storage/inicia_sesion') }}">Inicia Sesion</a>
-          <a class="btn btn-sm logins" href="{{ url('storage/registro') }}">Registrate</a>
+          <a class="btn btn-sm logins" href="<?php echo e(url('storage/inicia_sesion')); ?>">Inicia Sesion</a>
+          <a class="btn btn-sm logins" href="<?php echo e(url('storage/registro')); ?>">Registrate</a>
         </div>
 
       </nav>
 
       <div id="child-content">
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
       </div>
 
     </div>
@@ -316,4 +316,4 @@ a:focus {
 
 </body>
 
-</html>
+</html><?php /**PATH C:\Users\franc\Documents\septimo_semestre\TSP\doggos\resources\views/main.blade.php ENDPATH**/ ?>
