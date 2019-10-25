@@ -17,7 +17,7 @@
 }
 
 #main-title {
-  padding-top: 220px;
+  padding-top: 210px;
 }
 
 .full-height {
@@ -43,7 +43,9 @@
       <h3>
         Y encuentra un nuevo mejor amigo
       </h3>
-    <a href="{{ url('adoptar') }}" class="btn btn-xl logins">Buscalo ya</a>
+      <a href="{{ url('adoptar') }}" class="btn btn-xl logins">
+        Buscalo ya
+      </a>
     </div>
   </div>
 

@@ -38,7 +38,7 @@ class AdopcionController extends Controller {
         $perro->descripcion_perro = $request->descripcion_perro;
         $imagen = $request->file('imagen_perro');
         $file_name = $perro->nombre_perro.'_'.time();
-        $folder = '/perros/imagenes/';
+        $folder = 'perros/imagenes/';
         $file_path = $folder.$file_name.'.'.$imagen->getClientOriginalExtension();
         $file = $imagen->storeAs($folder, $file_name.'.'.$imagen->getClientOriginalExtension(), 'public');
         $perro->imagen_perro = $file_path;
