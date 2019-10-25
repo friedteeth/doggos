@@ -1,6 +1,4 @@
-@extends('main')
-
-@section('styles')
+<?php $__env->startSection('styles'); ?>
 
 #child-content {
     height: 100%;
@@ -26,22 +24,24 @@
     height: 100%;
 }
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class="container h-100">
     <div class="row align-items-center h-100">
     
         <div class="col-5">
-            <img src="{{ url('storage/'.$perro->imagen_perro) }}" class="img-thumbnail rounded-lg shadow imagen-perro p-0 m-0">
+            <img src="<?php echo e(url('storage/'.$perro->imagen_perro)); ?>" class="img-thumbnail rounded-lg shadow imagen-perro p-0 m-0">
         </div>
         <div class="col-7">
-            <h1>Conoce más sobre {{ $perro->nombre_perro }}</h1>
-            {{ $perro->nombre_perro }}
-            {{ $perro->descripcion_perro }}
+            <h1>Conoce más sobre <?php echo e($perro->nombre_perro); ?></h1>
+            <?php echo e($perro->nombre_perro); ?>
+
+            <?php echo e($perro->descripcion_perro); ?>
+
             <br><br>
-            <a href="{{ url()->previous() }}" class="btn logins-return">Regresar</a>
+            <a href="<?php echo e(url()->previous()); ?>" class="btn logins-return">Regresar</a>
             <button type="button" class="btn logins" data-toggle="modal" data-target="#exampleModal">
                 ¡Conocelo!
             </button>
@@ -59,11 +59,13 @@
                     <div class="modal-body">
                         <h3>Nombre:</h3>
                         <p>
-                            {{ $adopcion->nombre_dueno }}
-                            {{ $adopcion->apellidos_dueno }}
+                            <?php echo e($adopcion->nombre_dueno); ?>
+
+                            <?php echo e($adopcion->apellidos_dueno); ?>
+
                         </p>
                         <h3>Teléfono:</h3>
-                        <p>{{ $adopcion->telefono_dueno }}</p>
+                        <p><?php echo e($adopcion->telefono_dueno); ?></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Cerrar</button>
@@ -77,4 +79,5 @@
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\loera\laravel\adopta_mi_perro\resources\views/adoptar_perro.blade.php ENDPATH**/ ?>

@@ -16,15 +16,15 @@
 
 #main-title {
   padding-top: 210px;
+  opacity: 0.7;
 }
 
-.full-height {
-  
+.title-font {
+  color: white;
+  font-size: 3rem;
 }
 
-.btn-xl {
-  font-size: 25px;
-}
+
 
 <?php $__env->stopSection(); ?>
 

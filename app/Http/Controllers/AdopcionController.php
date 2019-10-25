@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Traits\UploadTrait;
 use App\Perro;
 use App\Adopcion;
@@ -14,7 +15,7 @@ class AdopcionController extends Controller {
         return view('form_adopcion');
     }
 
-    public function darAdopcion(Request $request) {
+    public function store(Request $request) {
         $validator = Validator::make($request->all(), [
             'nombre_dueno' => 'required|max:255',
             'apellidos_dueno' => 'required|max:255',

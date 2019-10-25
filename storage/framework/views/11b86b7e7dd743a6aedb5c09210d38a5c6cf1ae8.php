@@ -76,15 +76,27 @@ html, body {
 }
 
 .logins {
-  color: #1F6834;
-  border: 2px solid #1F6834;
+  color: #2F7844;
+  border: 2px solid #2F7844;
   border-radius: 40px;
   transition: all 0.3s;
 }
 
 .logins:hover {
   color: white;
-  background: #1F6834;
+  background: #2F7844;
+}
+
+.logins-return {
+  color: #993F3A;
+  border: 2px solid #993F3A;
+  border-radius: 40px;
+  transition: all 0.3s;
+}
+
+.logins-return:hover {
+  color: white;
+  background: #993F3A;
 }
 
 
@@ -168,7 +180,7 @@ a:focus {
 }
 
 #topbar {
-  z-index: 9999;
+  z-index: 9;
   position: fixed;
   top: 0;
   width: 100%;
@@ -189,6 +201,14 @@ a:focus {
 
 #child-content {
   padding-top: 25px;
+}
+
+.btn-xl {
+  font-size: 2rem;
+}
+
+.modal-open {
+    overflow: scroll;
 }
 
 <?php echo $__env->yieldContent('styles'); ?>

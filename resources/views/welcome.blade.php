@@ -18,15 +18,15 @@
 
 #main-title {
   padding-top: 210px;
+  opacity: 0.7;
 }
 
-.full-height {
-  {{-- height: 100%; --}}
+.title-font {
+  color: white;
+  font-size: 3rem;
 }
 
-.btn-xl {
-  font-size: 25px;
-}
+
 
 @endsection
 
