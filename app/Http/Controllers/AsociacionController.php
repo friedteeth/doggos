@@ -2,15 +2,24 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Asociacion;
 
 class AsociacionController extends Controller {
 
     public function index() {
-        return view('asociacion');
+        $asociaciones = Asociacion::all();
+        return view('asociacion', [
+            'asociaciones' => $asociaciones
+        ]);
     }
+   
+    public function show($id_asociacion) {
+        $asociaciones = Asociacion::find($id_asociacion);
 
-    public function detalle($id) {
-        return view('asociacion');
+        return view('asociacion_info', [
+            'asociacion' => $asociaciones
+        ]);
     }
 }

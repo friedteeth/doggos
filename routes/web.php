@@ -18,3 +18,7 @@ Route::resource('/asociacion', 'AsociacionController');
 Route::resource('/adopcion', 'AdopcionController');
 
 Route::resource('/adoptar', 'AdoptarController');
+
+Route::resource('/inicio_sesion', 'InicioSesionController');
+
+Route::resource('/registro', 'RegistroController');

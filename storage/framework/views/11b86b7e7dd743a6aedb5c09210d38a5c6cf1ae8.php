@@ -270,7 +270,7 @@ a:focus {
 
       <ul class="list-unstyled components">
         <li>
-        <a href="<?php echo e(url('adopcion')); ?>">Da en Adopci&oacute;n</a>
+        <a href="<?php echo e(url('adopcion')); ?>">Da en Adopción</a>
         </li>
         <li>
           <a href="<?php echo e(url('adoptar')); ?>">Adopta</a>
@@ -295,8 +295,8 @@ a:focus {
         </button>
 
         <div id="right-item">
-          <a class="btn btn-sm logins" href="<?php echo e(url('storage/inicia_sesion')); ?>">Inicia Sesion</a>
-          <a class="btn btn-sm logins" href="<?php echo e(url('storage/registro')); ?>">Registrate</a>
+          <a class="btn btn-sm logins" href="<?php echo e(url('inicio_sesion')); ?>">Inicia Sesión</a>
+          <a class="btn btn-sm logins" href="<?php echo e(url('registro')); ?>">Regístrate</a>
         </div>
 
       </nav>

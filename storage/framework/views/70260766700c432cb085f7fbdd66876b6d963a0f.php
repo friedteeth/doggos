@@ -43,7 +43,7 @@
             <br><br>
             <a href="<?php echo e(url()->previous()); ?>" class="btn logins-return">Regresar</a>
             <button type="button" class="btn logins" data-toggle="modal" data-target="#exampleModal">
-                ¡Conocelo!
+                ¡Adóptame!
             </button>
         </div>
 

@@ -3,7 +3,7 @@
 @section('styles')
 
 #content {
-    background: linear-gradient(rgba(22, 22, 22, 0.3), rgba(238, 238, 238, 1)), url('storage/stock/form_bg.jpg');
+    background: linear-gradient(rgba(22, 22, 22, 0.3), rgba(50, 50, 50, 1)), url('storage/stock/form_bg.jpg');
     /* background: url('storage/stock/main_bg.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@
 
 
 body {
-  background: #EEEEEE;
+  background: #323232;
 }
 
 @endsection
@@ -39,7 +39,7 @@ body {
 
     <div class="col-5 offset-1" id="main-title">
 
-      <h1 class="text-black big-font">
+      <h1 class="text-white big-font">
         ¡Te podemos ayudar!
       </h1>
 
@@ -48,6 +48,7 @@ body {
 
   <div class="row">
     <div class="col-8 offset-2">
+        <h1 class="list-title text-white text-center">Llena tus datos y los del perro</h1>
         <form action="{{ url('adopcion') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
           {{ csrf_field() }}
           @include('common.errors')
@@ -73,7 +74,7 @@ body {
               <h3>Datos de Contacto</h3>
             </div>
             <div class="card-body">
-                <label for="telefonoDueno">Telefono:</label>
+                <label for="telefonoDueno">Teléfono:</label>
                 <input type="text" name="telefono_dueno" id="telefonoDueno" class="form-control">
             </div>
           </div>
@@ -85,7 +86,7 @@ body {
             <div class="card-body">
               <label for="nombre">Nombre:</label>
               <input type="text" name="nombre_perro" id="nombre-perro" class="form-control">
-              <label for="descripcion">Descripcion:</label>
+              <label for="descripcion">Descripción:</label>
               <textarea name="descripcion_perro" id="descripcion-perro" class="form-control" rows="3"></textarea>
               <label for="imagen">Imagen:</label>
               <div class="custom-file">
@@ -97,7 +98,7 @@ body {
           <br>
           <div class="form-group text-center">
             <button type="submit" class="btn btn-xl logins shadow">
-              Dar en adopcion
+              Dar en adopción
             </button>
           </div>
       

@@ -270,7 +270,7 @@ a:focus {
 
       <ul class="list-unstyled components">
         <li>
-        <a href="{{ url('adopcion') }}">Da en Adopci&oacute;n</a>
+        <a href="{{ url('adopcion') }}">Da en Adopción</a>
         </li>
         <li>
           <a href="{{ url('adoptar') }}">Adopta</a>
@@ -295,8 +295,8 @@ a:focus {
         </button>
 
         <div id="right-item">
-          <a class="btn btn-sm logins" href="{{ url('storage/inicia_sesion') }}">Inicia Sesion</a>
-          <a class="btn btn-sm logins" href="{{ url('storage/registro') }}">Registrate</a>
+          <a class="btn btn-sm logins" href="{{ url('inicio_sesion') }}">Inicia Sesión</a>
+          <a class="btn btn-sm logins" href="{{ url('registro') }}">Regístrate</a>
         </div>
 
       </nav>

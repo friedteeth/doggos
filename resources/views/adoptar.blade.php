@@ -79,7 +79,7 @@ body {
                     <div class="card-body">
                         <h5 class="card-title">{{ $perro->nombre_perro }}</h5>
                         <p class="card-text">{{ $perro->descripcion_perro }}</p>
-                        <a href="{{ url('adoptar/'.$perro->id) }}" class="btn logins">Mas Informacion</a>
+                        <a href="{{ url('adoptar/'.$perro->id) }}" class="btn logins">Más Información</a>
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@ body {
     <div class="row" id="dog-list">
 
         <div class="col-10 offset-1 mb-3">
-            <h1 class="list-title text-white text-center">Aun no hay perros disponibles</h1>
+            <h1 class="list-title text-white text-center">Aún no hay perros disponibles</h1>
         </div>
     </div>
     @endif

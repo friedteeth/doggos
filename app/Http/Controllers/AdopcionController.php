@@ -27,7 +27,7 @@ class AdopcionController extends Controller {
         ]);
     
         if($validator->fails()) {
-            return redirect('/form_adopcion')
+            return redirect('/adopcion')
                 ->withInput()
                 ->withErrors($validator);
         }

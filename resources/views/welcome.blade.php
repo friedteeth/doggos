@@ -38,13 +38,13 @@
   
     <div class="col-5 offset-1 text-center" id="main-title">
       <h1>
-        ¡Animate!
+        ¡Anímate!
       </h1>
       <h3>
         Y encuentra un nuevo mejor amigo
       </h3>
       <a href="{{ url('adoptar') }}" class="btn btn-xl logins">
-        Buscalo ya
+        Búscalo ya
       </a>
     </div>
   </div>
