@@ -294,10 +294,10 @@ a:focus {
             <i class="fas fa-align-left"></i>
         </button>
 
-        <div id="right-item">
+        {{-- <div id="right-item">
           <a class="btn btn-sm logins" href="{{ url('inicio_sesion') }}">Inicia Sesión</a>
           <a class="btn btn-sm logins" href="{{ url('registro') }}">Regístrate</a>
-        </div>
+        </div> --}}
 
       </nav>
 
