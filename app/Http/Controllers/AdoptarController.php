@@ -6,8 +6,14 @@ use Illuminate\Http\Request;
 use App\Perro;
 use App\Adopcion;
 
+/**
+ * Esta clase se encarga de administrar las adopciones que se llevan a cabo
+ */
 class AdoptarController extends Controller {
 
+    /**
+     * Este metodo regresa la vista con un listado de perros disponibles
+     */
     public function index() {
         $perros = Perro::orderBy('created_at', 'asc')->get();
 
@@ -24,6 +30,9 @@ class AdoptarController extends Controller {
         ]);
     }
 
+    /**
+     * Este metodo se encarga de mostrar a detalle la informacion de un perro
+     */
     public function show($id_adopcion) {
         $adopcion = Adopcion::find($id_adopcion);
         $id_perro = $adopcion->id;

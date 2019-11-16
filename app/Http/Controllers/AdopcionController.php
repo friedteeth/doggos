@@ -9,12 +9,19 @@ use App\Perro;
 use App\Adopcion;
 use App\Asociacion;
 
+/**
+ * Esta clase se encarga de administrar solicitudes de adopciones
+ */
+
 class AdopcionController extends Controller {
 
     public function index() {
         return view('form_adopcion');
     }
 
+    /**
+     * Con este metodo se almacena una adopcion 
+     */
     public function store(Request $request) {
         $validator = Validator::make($request->all(), [
             'nombre_dueno' => 'required|max:255',
@@ -32,9 +39,10 @@ class AdopcionController extends Controller {
                 ->withErrors($validator);
         }
     
+        //Inicialmente se almacena un perro
+
         $perro = new Perro;
-        $adopcion = new Adopcion;
-    
+        
         $perro->nombre_perro = $request->nombre_perro;
         $perro->descripcion_perro = $request->descripcion_perro;
         $imagen = $request->file('imagen_perro');
@@ -44,7 +52,11 @@ class AdopcionController extends Controller {
         $file = $imagen->storeAs($folder, $file_name.'.'.$imagen->getClientOriginalExtension(), 'public');
         $perro->imagen_perro = $file_path;
         $perro->save();
-    
+        
+        //Despues se asocia el perro a la adopcion
+
+        $adopcion = new Adopcion;
+        
         $adopcion->id_perro = $perro->id;
         $adopcion->nombre_dueno = $request->nombre_dueno;
         $adopcion->apellidos_dueno = $request->apellidos_dueno;

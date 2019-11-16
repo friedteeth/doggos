@@ -2,7 +2,6 @@
 
 #content {
   background: linear-gradient(rgba(22, 22, 22, 0.1), rgba(22, 22, 22, 1)), url('storage/stock/main_bg.jpg');
-  /* background: url('storage/stock/main_bg.jpg'); */
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;

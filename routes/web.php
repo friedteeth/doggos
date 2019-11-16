@@ -22,3 +22,54 @@ Route::resource('/adoptar', 'AdoptarController');
 Route::resource('/inicio_sesion', 'InicioSesionController');
 
 Route::resource('/registro', 'RegistroController');
+
+Route::get('storage/perros/imagenes/{filename}', function ($filename)
+{
+    $path = storage_path('app/public_html/perros/imagenes/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    
+    return $response;
+});
+
+Route::get('storage/asociaciones/imagenes/{filename}', function ($filename)
+{
+    $path = storage_path('app/public_html/asociaciones/imagenes/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('storage/stock/{filename}', function ($filename)
+{
+    $path = storage_path('app/public_html/stock/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
