@@ -73,3 +73,7 @@ Route::get('storage/stock/{filename}', function ($filename)
 
     return $response;
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

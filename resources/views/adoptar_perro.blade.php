@@ -2,29 +2,7 @@
 
 @section('styles')
 
-#child-content {
-    height: 100%;
-    background: #EEEEEE;
-}
-
-.modal {
-    text-align: center;
-}
-
-.modal-open {
-    overflow: hidden;
-}
-
-.modal-dialog {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-}
-
-.imagen-perro {
-    width: 100%;
-    height: 100%;
-}
+<link href="{{ asset('css/adoptar_perro.style.css') }}" rel="stylesheet" type="text/css" >
 
 @endsection
 
@@ -50,24 +28,44 @@
         <div class="modal fade h-100" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Información del dueño</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <h3>Nombre:</h3>
-                        <p>
-                            {{ $adopcion->nombre_dueno }}
-                            {{ $adopcion->apellidos_dueno }}
-                        </p>
-                        <h3>Teléfono:</h3>
-                        <p>{{ $adopcion->telefono_dueno }}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Cerrar</button>
-                    </div>
+
+                    @guest
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Espera un momento...</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Debes estar registrado para conocer información de adopción.
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ route('login') }}" class="btn btn-primary">Iniciar sesión</a>
+                            <a href="{{ route('register') }}" class="btn btn-primary">Crear cuenta</a>
+                            <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    @else
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Información del dueño</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h3>Nombre:</h3>
+                            <p>
+                                {{ $adopcion->nombre_dueno }}
+                                {{ $adopcion->apellidos_dueno }}
+                            </p>
+                            <h3>Teléfono:</h3>
+                            <p>{{ $adopcion->telefono_dueno }}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    
+                    @endguest
+
                 </div>
             </div>
         </div>

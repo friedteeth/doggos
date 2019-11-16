@@ -1,29 +1,6 @@
 <?php $__env->startSection('styles'); ?>
 
-#content {
-  background: linear-gradient(rgba(22, 22, 22, 0.1), rgba(22, 22, 22, 1)), url('storage/stock/main_bg.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-}
-
-#child-content {
-  color: white;
-  height: 100%;
-}
-
-#main-title {
-  padding-top: 210px;
-  opacity: 0.7;
-}
-
-.title-font {
-  color: white;
-  font-size: 3rem;
-}
-
-
+<link href="<?php echo e(asset('css/welcome.style.css')); ?>" rel="stylesheet" type="text/css" >
 
 <?php $__env->stopSection(); ?>
 

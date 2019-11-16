@@ -2,29 +2,7 @@
 
 @section('styles')
 
-#child-content {
-    height: 100%;
-    background: #EEEEEE;
-}
-
-.modal {
-    text-align: center;
-}
-
-.modal-open {
-    overflow: hidden;
-}
-
-.modal-dialog {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-}
-
-.imagen-perro {
-    width: 100%;
-    height: 100%;
-}
+<link href="{{ asset('css/asociacion_info.style.css') }}" rel="stylesheet" type="text/css" >
 
 @endsection
 
