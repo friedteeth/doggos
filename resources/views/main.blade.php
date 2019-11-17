@@ -32,6 +32,39 @@
   <link href="{{ asset('css/mystyles.css') }}" rel="stylesheet" type="text/css" >
   @yield('styles')
 
+  <style>
+    @if(Request::url() === 'http://localhost:8000/adopcion')
+      #adopcion {
+        background: #fff;
+      }
+
+      #adopcion a {
+        color: #000000;
+        background: #fff;
+      }
+    @endif
+    @if(Request::url() === 'http://localhost:8000/adoptar')
+    #adoptar {
+        background: #fff;
+      }
+
+      #adoptar a {
+        color: #000000;
+        background: #fff;
+      }
+    @endif
+    @if(Request::url() === 'http://localhost:8000/asociacion')
+    #asociacion {
+        background: #fff;
+      }
+
+      #asociacion a {
+        color: #000000;
+        background: #fff;
+      }
+    @endif
+  </style>
+
 
 </head>
 
@@ -51,16 +84,17 @@
 
       <div class="sidebar-subheader">
         <p>Conoce tu perro ideal</p>
+        {{ Request::url() }}
       </div>
 
       <ul class="list-unstyled components">
-        <li>
+        <li id="adopcion">
         <a href="{{ url('adopcion') }}">Da en Adopción</a>
         </li>
-        <li>
+        <li id="adoptar">
           <a href="{{ url('adoptar') }}">Adopta</a>
         </li>
-        <li>
+        <li id="asociacion">
           <a href="{{ url('asociacion') }}">Asociaciones</a>
         </li>
       </ul>

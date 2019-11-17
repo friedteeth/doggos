@@ -24,7 +24,7 @@
   <div class="row">
     <div class="col-8 offset-2">
         <h1 class="list-title text-white text-center">Llena tus datos y los del perro</h1>
-        <form action="{{ url('adopcion') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
+        <form action="{{ url('adopcion') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
           {{ csrf_field() }}
           @include('common.errors')
           <br>
@@ -33,14 +33,21 @@
               <h3>Datos Personales</h3>
             </div>
             <div class="card-body">
-              <label for="nombreDueno">Nombre:</label>
-              <input type="text" name="nombre_dueno" id="nombreDueno" class="form-control">
-                    
-              <label for="apellidosDueno">Apellidos:</label>
-              <input type="text" name="apellidos_dueno" id="apellidosDueno" class="form-control">
-      
-              <label for="motivoAdopcion">Motivo:</label>
-              <textarea name="motivo" id="motivoAdopcion" class="form-control" rows="3"></textarea>
+                <div class="form-group row">
+                    <label for="motivo" class="col-md-4 col-form-label text-md-right text-dark">Motivo por el que se da en adopción:</label>
+
+                    <div class="col-md-6">
+                        <textarea name="motivo" id="motivoAdopcion" class="form-control @error('motivo') is-invalid @enderror" required rows="3" autofocus></textarea>
+
+                        @error('motivo')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+              
+              
             </div>
           </div>
           <br>
@@ -49,8 +56,19 @@
               <h3>Datos de Contacto</h3>
             </div>
             <div class="card-body">
-                <label for="telefonoDueno">Teléfono:</label>
-                <input type="text" name="telefono_dueno" id="telefonoDueno" class="form-control">
+                <div class="form-group row">
+                    <label for="telefono_dueno" class="col-md-4 col-form-label text-md-right text-dark">Teléfono:</label>
+
+                    <div class="col-md-6">
+                        <input type="text" name="telefono_dueno" id="telefono_dueno" class="form-control  @error('telefono_dueno') is-invalid @enderror" value="{{ Auth::user()->telefono }}" required autofocus>
+
+                        @error('telefono_dueno')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
             </div>
           </div>
           <br>
@@ -59,13 +77,146 @@
               <h3>Datos del Perro</h3>
             </div>
             <div class="card-body">
-              <label for="nombre">Nombre:</label>
-              <input type="text" name="nombre_perro" id="nombre-perro" class="form-control">
-              <label for="descripcion">Descripción:</label>
-              <textarea name="descripcion_perro" id="descripcion-perro" class="form-control" rows="3"></textarea>
-              <label for="imagen">Imagen:</label>
-              <div class="custom-file">
-                <input type="file" name="imagen_perro" id="imagen-perro" class="custon-file-input">
+                <div class="form-group row">
+                    <label for="nombre_perro" class="col-md-4 col-form-label text-md-right text-dark">Nombre:</label>
+
+                    <div class="col-md-6">
+                        <input type="text" name="nombre_perro" id="nombre_perro" class="form-control  @error('nombre_perro') is-invalid @enderror" value="" required autofocus>
+
+                        @error('nombre_perro')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+              <div class="form-group row">
+                  <label for="descripcion_color" class="col-md-4 col-form-label text-md-right text-dark">Descripción de colores:</label>
+
+                  <div class="col-md-6">
+                      <textarea name="descripcion_color" id="descripcion_color" rows="3" class="form-control @error('motivo') is-invalid @enderror" required autofocus></textarea>
+
+                      @error('descripcion_color')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="complexion" class="col-md-4 col-form-label text-md-right text-dark">Complexión:</label>
+
+                  <div class="col-md-6">
+                      <select class="custom-select" name="complexion" id="complexion">
+                          <option value="Pequeño ancho">Pequeño ancho</option>
+                          <option value="Pequeño delgado">Pequeño delgado</option>
+                          <option value="Pequeño">Pequeño</option>
+                          <option value="Mediano ancho">Mediano ancho</option>
+                          <option value="Mediano delgado">Mediano delgado</option>
+                          <option value="Mediano">Mediano</option>
+                          <option value="Grande ancho">Grande ancho</option>
+                          <option value="Grande delgado">Grande delgado</option>
+                          <option value="Grande">Grande</option>
+                        </select>
+
+                      @error('complexion')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="edad" class="col-md-4 col-form-label text-md-right text-dark">Edad en meses:</label>
+
+                  <div class="col-md-6">
+                      <input type="number" name="edad" id="edad" class="form-control  @error('edad') is-invalid @enderror" required autofocus min="1" max="360">
+
+                      @error('edad')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
+              </div>
+              <div class="row form-group justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="esterilizado" id="esterilizado" class="form-control form-check-input @error('esterilizado') is-invalid @enderror" autofocus>
+                        <label for="esterilizado" class="text-dark form-check-label">Esterilizado</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="desparacitado" id="desparacitado" class="form-control form-check-input @error('desparacitado') is-invalid @enderror" autofocus>
+                        <label for="desparacitado" class="text-dark form-check-label">Desparacitado</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="vacunado" id="vacunado" class="form-control form-check-input @error('vacunado') is-invalid @enderror" autofocus>
+                        <label for="vacunado" class="text-dark form-check-label">Vacunado</label>
+                    </div>
+              </div>
+              <div class="form-group row">
+                  <label for="genero" class="col-md-4 col-form-label text-md-right text-dark">Genero:</label>
+
+                  <div class="col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input type="radio" name="genero" id="genero_m" class="form-check-input form-control @error('genero') is-invalid @enderror" value="Macho" required autofocus checked>
+                      <label class="form-check-label" for="genero_m">
+                        Macho
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input type="radio" name="genero" id="genero_h" class="form-check-input form-control @error('genero') is-invalid @enderror" value="Hembra" required autofocus>
+                      <label class="form-check-label" for="genero_h">
+                        Hembra
+                      </label>
+                    </div>
+
+                      @error('genero')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="otros_detalles" class="col-md-4 col-form-label text-md-right text-dark">Otros detalles:</label>
+
+                  <div class="col-md-6">
+                      <textarea name="otros_detalles" id="otros-detalles" class="form-control @error('otros_detalles') is-invalid @enderror" rows="3"></textarea>        
+
+                      @error('otros_detalles')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="comportamiento" class="col-md-4 col-form-label text-md-right text-dark">Comportamiento:</label>
+
+                  <div class="col-md-6">
+                      <textarea name="comportamiento" id="comportamiento" class="form-control @error('comportamiento') is-invalid @enderror" rows="3"></textarea>
+
+                      @error('comportamiento')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="imagen_perro" class="col-md-4 col-form-label text-md-right text-dark">Imagen:</label>
+
+                  <div class="col-md-6">
+                      <div class="custom-file">
+                          <input type="file" name="imagen_perro" id="imagen-perro" class="custon-file-input @error('comportamiento') is-invalid @enderror">
+                        </div>
+
+                      @error('imagen_perro')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                      @enderror
+                  </div>
               </div>
               
             </div>

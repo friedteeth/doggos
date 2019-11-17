@@ -32,6 +32,39 @@
   <link href="<?php echo e(asset('css/mystyles.css')); ?>" rel="stylesheet" type="text/css" >
   <?php echo $__env->yieldContent('styles'); ?>
 
+  <style>
+    <?php if(Request::url() === 'http://localhost:8000/adopcion'): ?>
+      #adopcion {
+        background: #fff;
+      }
+
+      #adopcion a {
+        color: #000000;
+        background: #fff;
+      }
+    <?php endif; ?>
+    <?php if(Request::url() === 'http://localhost:8000/adoptar'): ?>
+    #adoptar {
+        background: #fff;
+      }
+
+      #adoptar a {
+        color: #000000;
+        background: #fff;
+      }
+    <?php endif; ?>
+    <?php if(Request::url() === 'http://localhost:8000/asociacion'): ?>
+    #asociacion {
+        background: #fff;
+      }
+
+      #asociacion a {
+        color: #000000;
+        background: #fff;
+      }
+    <?php endif; ?>
+  </style>
+
 
 </head>
 
@@ -51,16 +84,18 @@
 
       <div class="sidebar-subheader">
         <p>Conoce tu perro ideal</p>
+        <?php echo e(Request::url()); ?>
+
       </div>
 
       <ul class="list-unstyled components">
-        <li>
+        <li id="adopcion">
         <a href="<?php echo e(url('adopcion')); ?>">Da en Adopción</a>
         </li>
-        <li>
+        <li id="adoptar">
           <a href="<?php echo e(url('adoptar')); ?>">Adopta</a>
         </li>
-        <li>
+        <li id="asociacion">
           <a href="<?php echo e(url('asociacion')); ?>">Asociaciones</a>
         </li>
       </ul>

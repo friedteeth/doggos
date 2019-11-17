@@ -19,8 +19,10 @@ class CreaTablaAdopcion extends Migration
             $table->foreign('id_perro')
                 ->references('id')
                 ->on('perros');
-            $table->string('nombre_dueno');
-            $table->string('apellidos_dueno');
+            $table->unsignedBigInteger('id_dueno');
+            $table->foreign('id_dueno')
+                ->references('id')
+                ->on('users');
             $table->string('motivo_adopcion');
             $table->char('telefono_dueno', 10);
             $table->timestamps();

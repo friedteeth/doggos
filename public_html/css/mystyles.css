@@ -1,15 +1,13 @@
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-
 body {
     font-family: 'Poppins', sans-serif;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .wrapper {
@@ -19,18 +17,8 @@ html, body {
     /* align-items: stretch; */
 }
 
-.linea {
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px dashed #408955;
-}
-
-.fas {
-    color: #408955;
-}
-
 .hello {
-    color: #2F7844;  
+    color: #000000;
     display: inline;
 }
 
@@ -43,38 +31,37 @@ html, body {
 }
 
 .logins {
-  color: #2F7844;
-  border: 2px solid #2F7844;
-  border-radius: 40px;
-  transition: all 0.3s;
+    color: #000000;
+    background: #9FEDD7;
+    border-radius: 40px;
+    transition: all 0.3s;
 }
 
 .logins:hover {
-  color: white;
-  background: #2F7844;
+    color: #000000;
+    background: #FEF9C7;
 }
 
 .logins-return {
-  color: #993F3A;
-  border: 2px solid #993F3A;
-  border-radius: 40px;
-  transition: all 0.3s;
+    color: #000000;
+    background: #A95F5A;
+    border-radius: 40px;
+    transition: all 0.3s;
 }
 
 .logins-return:hover {
-  color: white;
-  background: #993F3A;
+    color: #000000;
+    background: #FEF9C7;
 }
 
-
 #sidebarCollapse {
-  color: #FFF;
-  background: #5FA874;
+    color: #000000;
+    background: #FEF9C7;
 }
 
 #sidebarCollapse:hover {
-  color: #FFF;
-  background: #408955;
+    color: #000000;
+    background: #9FEDD7;
 }
 
 a,
@@ -86,34 +73,32 @@ a:focus {
 }
 
 #sidebar {
-  width: 260px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  z-index: 999;
-  background: #5FA874;
-  color: #FFF;
-  transition: all 0.3s;
+    width: 260px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 999;
+    background: #026670;
+    transition: all 0.3s;
 }
 
 #right-item {
-  margin-right: 260px;
-  transition: all 0.3s;
+    margin-right: 260px;
+    transition: all 0.3s;
 }
-
 
 #sidebar.active {
     margin-left: -260px;
 }
 
 #right-item.active {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 #sidebar .sidebar-header {
     text-align: center;
-    background: #408955;
+    background: #026670;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -123,12 +108,12 @@ a:focus {
     font-size: 0.9em;
     padding-top: 5px;
     padding-bottom: 5px;
-    background: #D6FADF;
+    background: #9FEDD7;
 }
 
 #sidebar .sidebar-subheader p {
     display: inline;
-    color: #509965;
+    color: #000000;
 }
 
 #sidebar ul li a {
@@ -139,7 +124,7 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #5FA874;
+    color: #000000;
     background: #fff;
 }
 
@@ -148,31 +133,31 @@ a:focus {
 }
 
 #topbar {
-  z-index: 9;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #9AD1B6;
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #FCE181;
 }
 
 #content {
-  transition: all 0.3s;
-  margin-left: 260px;
-  padding-top: 40px;
-  /* height: 100hv; */
-  width: 100%;
+    transition: all 0.3s;
+    margin-left: 260px;
+    padding-top: 40px;
+    /* height: 100hv; */
+    width: 100%;
 }
 
 #content.active {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 #child-content {
-  padding-top: 25px;
+    padding-top: 25px;
 }
 
 .btn-xl {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 .modal-open {
@@ -180,24 +165,23 @@ a:focus {
 }
 
 @yield('styles')
-
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
     #sidebar {
-      margin-left: -260px;
+        margin-left: -260px;
     }
     #sidebar.active {
         margin-left: 0;
     }
     #content.active {
-      margin-left: 260px;
+        margin-left: 260px;
     }
     #content {
-      margin-left: 0;
-      /* padding-top: 0; */
+        margin-left: 0;
+        /* padding-top: 0; */
     }
     #sidebarCollapse span {
         display: none;

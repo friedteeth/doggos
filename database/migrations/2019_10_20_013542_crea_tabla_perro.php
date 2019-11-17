@@ -16,9 +16,16 @@ class CreaTablaPerro extends Migration
         Schema::create('perros', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre_perro');
-            $table->string('descripcion_perro');
-            $table->string('imagen_perro')->nullable();
-            
+            $table->string('descripcion_color');
+            $table->string('complexion');
+            $table->integer('edad');
+            $table->boolean('esterilizado');
+            $table->boolean('desparacitado');
+            $table->boolean('vacunado');
+            $table->string('genero');
+            $table->string('imagen_perro');
+            $table->string('otros_detalles');
+            $table->string('comportamiento');
             $table->timestamps();
         });
     }

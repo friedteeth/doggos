@@ -1,31 +1,6 @@
 <?php $__env->startSection('styles'); ?>
 
-#content {
-    background: linear-gradient(rgba(22, 22, 22, 0.3), rgba(50, 50, 50, 1)), url('storage/stock/form_bg.jpg');
-    /* background: url('storage/stock/main_bg.jpg'); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
-}
-
-#child-content {
-  height: 100%;
-}
-
-#main-title {
-  padding-top: 100px;
-  opacity: 0.9; 
-}
-
-.big-font {
-  font-size: 3rem;
-}
-
-
-body {
-  background: #323232;
-}
+<link href="<?php echo e(asset('css/adopcion.style.css')); ?>" rel="stylesheet" type="text/css" >
 
 <?php $__env->stopSection(); ?>
 
