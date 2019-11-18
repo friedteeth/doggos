@@ -1,6 +1,9 @@
 #child-content {
     height: 100%;
-    background: #EEEEEE;
+}
+
+body {
+    background: #EDEAE5;
 }
 
 .modal {

@@ -1,6 +1,6 @@
 <?php $__env->startSection('styles'); ?>
 
-<link href="<?php echo e(asset('css/welcome.style.css')); ?>" rel="stylesheet" type="text/css" >
+<link href="<?php echo e(asset('css/welcome.style.css')); ?>" rel="stylesheet" type="text/css">
 
 <?php $__env->stopSection(); ?>
 
@@ -9,7 +9,7 @@
 <div class="container h-100">
 
   <div class="row h-100">
-  
+
     <div class="col-5 offset-1 text-center" id="main-title">
       <h1>
         ¡Anímate!

@@ -27,41 +27,48 @@ body {
     height: 40px;
     border-radius: 25px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .logins {
-    color: #000000;
-    background: #9FEDD7;
+    color: #EDEAE5;
+    background: #026670;
     border-radius: 40px;
+    border: 2px solid #026670;
     transition: all 0.3s;
 }
 
-.logins:hover {
-    color: #000000;
-    background: #FEF9C7;
+.logins:not([disabled]):hover {
+    color: #026670;
+    background: #EDEAE5;
+    border-radius: 40px;
+    border: 2px solid #026670;
 }
 
 .logins-return {
-    color: #000000;
+    color: #EDEAE5;
     background: #A95F5A;
     border-radius: 40px;
+    border: 2px solid #A95F5A;
     transition: all 0.3s;
 }
 
 .logins-return:hover {
-    color: #000000;
-    background: #FEF9C7;
+    color: #A95F5A;
+    background: #EDEAE5;
+    border: 2px solid #A95F5A;
 }
 
 #sidebarCollapse {
-    color: #000000;
-    background: #FEF9C7;
+    color: #EDEAE5;
+    background: #026670;
+    border: 2px solid #026670;
 }
 
 #sidebarCollapse:hover {
-    color: #000000;
-    background: #9FEDD7;
+    color: #026670;
+    background: #EDEAE5;
+    border: 2px solid #026670;
 }
 
 a,
@@ -153,6 +160,7 @@ a:focus {
 }
 
 #child-content {
+    width: 100%;
     padding-top: 25px;
 }
 
@@ -164,7 +172,7 @@ a:focus {
     overflow: scroll;
 }
 
-@yield('styles')
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
