@@ -32,7 +32,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><?php echo e($asociacion->nombre_asociacion); ?></h5>
-                    <p class="card-text"><?php echo e($asociacion->descripcion_asociacion); ?></p>
+                    <p class="card-text"><?php echo e($asociacion->actividades); ?></p>
                     <a href="<?php echo e(url('asociacion/'.$asociacion->id)); ?>" class="btn logins">Más Informacion</a>
                 </div>
             </div>
@@ -46,7 +46,7 @@
     <div class="row" id="dog-list">
 
         <div class="col-10 offset-1 mb-3">
-            <h1 class="list-title text-white text-center">Aun no hay asociaciones disponibles</h1>
+            <h1 class="list-title text-white text-center">Aún no hay asociaciones disponibles</h1>
         </div>
     </div>
     <?php endif; ?>

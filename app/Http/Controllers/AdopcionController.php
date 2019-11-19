@@ -31,6 +31,7 @@ class AdopcionController extends Controller {
         $validator = Validator::make($request->all(), [
             'telefono_dueno' => 'required|regex:/[0-9]{10}/',
             'motivo' => 'required|max:510',
+            'requisito' => 'required|max:510',
             'nombre_perro' => 'required|max:50',
             'descripcion_color' => 'required|max:300',
             'complexion' => 'required',
@@ -60,10 +61,10 @@ class AdopcionController extends Controller {
         } else {
             $perro->esterilizado = false;
         }
-        if($request->has('desparacitado')) {
-            $perro->desparacitado = true;
+        if($request->has('desparasitado')) {
+            $perro->desparasitado = true;
         } else {
-            $perro->desparacitado = false;
+            $perro->desparasitado = false;
         }
         if($request->has('vacunado')) {
             $perro->vacunado = true;
@@ -89,6 +90,7 @@ class AdopcionController extends Controller {
         $adopcion->id_perro = $perro->id;
         $adopcion->telefono_dueno = $request->telefono_dueno;
         $adopcion->motivo_adopcion = $request->motivo;
+        $adopcion->requisito_adopcion = $request->requisito;
         $adopcion->save();
     
         return view('adopcion', [

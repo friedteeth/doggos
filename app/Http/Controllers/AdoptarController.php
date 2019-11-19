@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Perro;
 use App\Adopcion;
@@ -42,10 +43,13 @@ class AdoptarController extends Controller {
 
         $perro = Perro::find($id_perro);
 
+        $terms = Auth::user()->terminos_condiciones;
+
         return view('adoptar_perro', [
             'perro' => $perro,
             'adopcion' => $adopcion,
-            'dueno' => $dueno->name
+            'dueno' => $dueno->name,
+            'terms' => $terms
         ]);
     }
     

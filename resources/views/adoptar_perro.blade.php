@@ -3,6 +3,8 @@
 @section('styles')
 
 <link href="{{ asset('css/adoptar_perro.style.css') }}" rel="stylesheet" type="text/css">
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 @endsection
 
@@ -10,20 +12,18 @@
 
 <div class="container-fluid h-100">
     <div class="row align-items-center h-100">
+        <div class="col-12 text-center">
+            <h1>Conoce más sobre </h1>
+            <h1 class="dog-title">
+                {{ $perro->nombre_perro }}
+            </h1>
+        </div>
 
         <div class="col-4">
             <img src="{{ url('storage/'.$perro->imagen_perro) }}"
                 class="img-thumbnail rounded-lg shadow imagen-perro p-0 m-0">
         </div>
         <div class="col-8 pr-3">
-            <div class="row pb-3 text-center">
-                <div class="col">
-                    <h1>Conoce más sobre </h1>
-                    <h1 class="dog-title">
-                        {{ $perro->nombre_perro }}
-                    </h1>
-                </div>
-            </div>
             <div class="row pb-3">
                 <div class="col-4">
                     <h4>Complexión:</h4>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="row pb-3">
-                @if ($perro->esterilizado == 1 || $perro->vacunado == 1 || $perro->desparacitado == 1)
+                @if ($perro->esterilizado == 1 || $perro->vacunado == 1 || $perro->desparasitado == 1)
                     <div class="col">
                         <h4>Estado:</h4>
                         <ul class="list-group">
@@ -48,7 +48,7 @@
                                     Esterilizado
                                 </li>
                             @endif
-                            @if ($perro->desparacitado == 1)
+                            @if ($perro->desparasitado == 1)
                                 <li class="list-group-item bg-transparent rounded shadow mb-1">
                                     Desparacitado
                                 </li>
@@ -60,7 +60,7 @@
                             @endif
                         </ul>
                     </div>
-                    @endif
+                @endif
                 <div class="col">
                     <h4>Edad:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
@@ -68,7 +68,7 @@
                     </li>
                 </div>
                 <div class="col">
-                    <h4>Genero:</h4>
+                    <h4>Género:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
                         {{ $perro->genero }}
                     </li>
@@ -92,12 +92,12 @@
 
             <br><br>
             <a href="{{ url()->previous() }}" class="btn logins-return">Regresar</a>
-            <button type="button" class="btn logins" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn logins" data-toggle="modal" data-target="#mod">
                 ¡Adóptame!
             </button>
         </div>
 
-        <div class="modal fade h-100" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade h-100" id="mod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -130,7 +130,7 @@
                         <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Cerrar</button>
                     </div>
                     @else
-                        @if (Auth::user()->terminos_condiciones == 1)    
+                        @if ($terms == 1)    
                         <div class="modal-header info-title">
                             <h2 class="modal-title text-white" id="exampleModalLabel">Información de contacto</h2>
                             
@@ -180,7 +180,10 @@
                         </div>
                         <div class="modal-footer">
                             <button data-dismiss="modal" type="button" class="btn logins-return">Cerrar</button>
-                            <button data-dismiss="modal" type="submit" class="btn logins disabled" id="continuar-terms" disabled>Continuar</button>
+                            <form action="{{ url('aceptar_terminos')}}" method="POST">
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn logins disabled" id="continuar-terms" disabled>Continuar</button>
+                            </form>
                         </div>
                         @endif
 
@@ -194,6 +197,7 @@
 </div>
 
 <script>
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     
     function check() {
         if($("#terms").is(':checked')){

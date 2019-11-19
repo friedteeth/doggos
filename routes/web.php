@@ -23,6 +23,8 @@ Route::resource('/inicio_sesion', 'InicioSesionController');
 
 Route::resource('/registro', 'RegistroController');
 
+Route::post('/aceptar_terminos', 'AceptarTerminos@confirmar');
+
 Route::get('storage/perros/imagenes/{filename}', function ($filename)
 {
     $path = storage_path('app/public_html/perros/imagenes/' . $filename);

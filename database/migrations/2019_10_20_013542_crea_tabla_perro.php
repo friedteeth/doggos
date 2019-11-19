@@ -20,7 +20,7 @@ class CreaTablaPerro extends Migration
             $table->string('complexion');
             $table->integer('edad');
             $table->boolean('esterilizado');
-            $table->boolean('desparacitado');
+            $table->boolean('desparasitado');
             $table->boolean('vacunado');
             $table->string('genero');
             $table->string('imagen_perro');

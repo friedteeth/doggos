@@ -75,6 +75,22 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="requisito"
+                                class="col-md-4 col-form-label text-md-right text-dark">Requisitos para adopción:</label>
+
+                            <div class="col-md-6">
+                                <textarea name="requisito" id="requisito"
+                                    class="form-control @error('requisito') is-invalid @enderror" required rows="3"
+                                    autofocus></textarea>
+
+                                @error('requisito')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -163,10 +179,10 @@
                                 <label for="esterilizado" class="text-dark form-check-label">Esterilizado</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input type="checkbox" name="desparacitado" id="desparacitado"
-                                    class="form-control form-check-input @error('desparacitado') is-invalid @enderror"
+                                <input type="checkbox" name="desparasitado" id="desparasitado"
+                                    class="form-control form-check-input @error('desparasitado') is-invalid @enderror"
                                     autofocus>
-                                <label for="desparacitado" class="text-dark form-check-label">Desparacitado</label>
+                                <label for="desparasitado" class="text-dark form-check-label">Desparasitado</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="vacunado" id="vacunado"
@@ -176,7 +192,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="genero" class="col-md-4 col-form-label text-md-right text-dark">Genero:</label>
+                            <label for="genero" class="col-md-4 col-form-label text-md-right text-dark">Género:</label>
 
                             <div class="col-md-6">
                                 <div class="form-check form-check-inline">

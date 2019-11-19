@@ -24,6 +24,7 @@ class CreaTablaAdopcion extends Migration
                 ->references('id')
                 ->on('users');
             $table->string('motivo_adopcion');
+            $table->string('requisito_adopcion');
             $table->char('telefono_dueno', 10);
             $table->timestamps();
         });
