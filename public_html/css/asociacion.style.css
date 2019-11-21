@@ -1,6 +1,5 @@
 #content {
-    background: linear-gradient(rgba(22, 22, 22, 0.3), rgba(34, 34, 34, 1)), url('../storage/stock/asoc_bg.jpg');
-    /* background: url('storage/stock/main_bg.jpg'); */
+    background: linear-gradient(rgba(22, 22, 22, 0.3), rgba(50, 50, 50, 1)), url('../storage/stock/asoc_bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -25,7 +24,7 @@
 }
 
 #main-title {
-    padding-top: 210px;
+    padding-top: 180px;
     opacity: 0.7;
 }
 
@@ -42,5 +41,5 @@
 }
 
 body {
-    background: #222222;
+    background: #323232;
 }

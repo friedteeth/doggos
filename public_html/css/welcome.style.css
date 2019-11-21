@@ -1,5 +1,5 @@
 #content {
-    background: linear-gradient(rgba(22, 22, 22, 0.1), rgba(22, 22, 22, 1)), url('../storage/stock/main_bg.jpg');
+    background: linear-gradient(rgba(22, 22, 22, 0.1), rgba(50, 50, 50, 1)), url('../storage/stock/main_bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -19,4 +19,8 @@
 .title-font {
     color: white;
     font-size: 3rem;
+}
+
+body {
+    background: #323232;
 }

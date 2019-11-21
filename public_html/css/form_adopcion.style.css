@@ -1,4 +1,3 @@
-
 #content {
     background: linear-gradient(rgba(22, 22, 22, 0.3), rgba(50, 50, 50, 1)), url('../storage/stock/form_bg.jpg');
     background-position: center;
@@ -8,19 +7,18 @@
 }
 
 #child-content {
-  height: 100%;
+    height: 100%;
 }
 
 #main-title {
-  padding-top: 210px;
-  opacity: 0.9; 
+    padding-top: 210px;
+    opacity: 0.9;
 }
 
 .big-font {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
-
 body {
-  background: #323232;
+    background: #323232;
 }

@@ -22,7 +22,7 @@
     </div>
 
     <div class="row">
-        <div class="col-8 offset-2">
+        <div class="col-10 offset-1">
             <h1 class="list-title text-white text-center">Llena tus datos y los del perro</h1>
             <form action="{{ url('adopcion') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -174,19 +174,19 @@
                         <div class="row form-group justify-content-center">
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="esterilizado" id="esterilizado"
-                                    class="form-control form-check-input @error('esterilizado') is-invalid @enderror"
+                                    class="form-check-input"
                                     autofocus>
                                 <label for="esterilizado" class="text-dark form-check-label">Esterilizado</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="desparasitado" id="desparasitado"
-                                    class="form-control form-check-input @error('desparasitado') is-invalid @enderror"
+                                    class="form-check-input"
                                     autofocus>
                                 <label for="desparasitado" class="text-dark form-check-label">Desparasitado</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="vacunado" id="vacunado"
-                                    class="form-control form-check-input @error('vacunado') is-invalid @enderror"
+                                    class="form-check-input"
                                     autofocus>
                                 <label for="vacunado" class="text-dark form-check-label">Vacunado</label>
                             </div>

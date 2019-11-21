@@ -1,18 +1,23 @@
 #content {
-    background: linear-gradient(rgba(22, 22, 22, 0.1), rgba(22, 22, 22, 1)), url('../storage/stock/login_bg.jpg');
+    background: linear-gradient(rgba(22, 22, 22, 0.1), rgba(50, 50, 50, 1)), url('../storage/stock/login_bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
-    padding-top: 200px;
-  }
-  
-  #child-content {
+    padding-top: 80px;
+
+}
+
+#child-content {
     color: white;
     height: 100%;
-  }
-  
-  .title-font {
+}
+
+.title-font {
     color: white;
     font-size: 3rem;
-  }
+}
+
+body {
+    background: #323232;
+}

@@ -20,7 +20,7 @@
     </div>
 
     <div class="row">
-        <div class="col-8 offset-2">
+        <div class="col-10 offset-1">
             <h1 class="list-title text-white text-center">Llena tus datos y los del perro</h1>
             <form action="<?php echo e(url('adopcion')); ?>" method="POST" class="form-horizontal" enctype="multipart/form-data">
                 <?php echo e(csrf_field()); ?>
@@ -264,40 +264,19 @@ unset($__errorArgs, $__bag); ?>
                         <div class="row form-group justify-content-center">
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="esterilizado" id="esterilizado"
-                                    class="form-control form-check-input <?php $__errorArgs = ['esterilizado'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>"
+                                    class="form-check-input"
                                     autofocus>
                                 <label for="esterilizado" class="text-dark form-check-label">Esterilizado</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="desparasitado" id="desparasitado"
-                                    class="form-control form-check-input <?php $__errorArgs = ['desparasitado'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>"
+                                    class="form-check-input"
                                     autofocus>
                                 <label for="desparasitado" class="text-dark form-check-label">Desparasitado</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="vacunado" id="vacunado"
-                                    class="form-control form-check-input <?php $__errorArgs = ['vacunado'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>"
+                                    class="form-check-input"
                                     autofocus>
                                 <label for="vacunado" class="text-dark form-check-label">Vacunado</label>
                             </div>
