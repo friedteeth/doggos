@@ -88,7 +88,7 @@ unset($__errorArgs, $__bag); ?>
                                         <?php echo e(old('remember') ? 'checked' : ''); ?>>
 
                                     <label class="form-check-label text-dark" for="remember">
-                                        Recuerdame
+                                        Recuérdame
                                     </label>
                                 </div>
                             </div>
@@ -110,9 +110,9 @@ unset($__errorArgs, $__bag); ?>
                     </form>
 
                     <div class="text-center text-dark pt-5">
-                        ¿Sin cuenta?
+                        ¿No tienes cuenta?
                         <br>
-                        <a class="btn btn-link" href="<?php echo e(route('register')); ?>">Crea una ahora mismo.</a>
+                        <a class="btn btn-link" href="<?php echo e(route('register')); ?>">Crea una ahora mismo</a>
                     </div>
                 </div>
             </div>

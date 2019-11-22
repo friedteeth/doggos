@@ -16,19 +16,19 @@
             </h1>
         </div>
 
-        <div class="col-4">
+        <div class="col-md-4 col-12 pb-3">
             <img src="{{ url('storage/'.$asociacion->imagen_asociacion) }}"
                 class="img-thumbnail rounded-lg shadow imagen-perro p-0 m-0">
         </div>
-        <div class="col-8 pr-3">
+        <div class="col-md-8 col-12 pr-3">
             <div class="row pb-3">
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6 col-12">
                     <h4>Teléfono:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
                         {{ $asociacion->telefono }}
                     </li>
                 </div>
-                <div class="col-8">
+                <div class="col-md-4 col-sm-6 col-12">
                     <h4>Actividades:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
                         {{ $asociacion->actividades }}

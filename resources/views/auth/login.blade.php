@@ -62,7 +62,7 @@
                                         {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label text-dark" for="remember">
-                                        Recuerdame
+                                        Recuérdame
                                     </label>
                                 </div>
                             </div>
@@ -84,9 +84,9 @@
                     </form>
 
                     <div class="text-center text-dark pt-5">
-                        ¿Sin cuenta?
+                        ¿No tienes cuenta?
                         <br>
-                        <a class="btn btn-link" href="{{ route('register') }}">Crea una ahora mismo.</a>
+                        <a class="btn btn-link" href="{{ route('register') }}">Crea una ahora mismo</a>
                     </div>
                 </div>
             </div>

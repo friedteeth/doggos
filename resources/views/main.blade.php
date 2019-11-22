@@ -90,16 +90,27 @@
 
       <ul class="list-unstyled components">
         <li id="adopcion">
-          <a href="{{ url('adopcion') }}">Da en Adopción</a>
+          <a href="{{ url('adopcion') }}">Dar en Adopción</a>
         </li>
         <li id="adoptar">
-          <a href="{{ url('adoptar') }}">Adopta</a>
+          <a href="{{ url('adoptar') }}">Adoptar</a>
         </li>
         <li id="asociacion">
           <a href="{{ url('asociacion') }}">Asociaciones</a>
         </li>
       </ul>
-
+      <div class="row justify-content-center">
+      @guest
+        <a class="btn btn-sm logins side-login" href="{{ route('login') }}">Iniciar Sesión</a>
+        <a class="btn btn-sm logins side-login" href="{{ route('register') }}">Crear cuenta</a>
+      @else
+        <a class="btn btn-sm logins side-logout" href="{{ route('logout') }}" onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">Cerrar sesión</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+        </form>
+      @endguest
+      </div>
     </nav>
 
     <div id="content">
@@ -111,22 +122,19 @@
         </button>
 
         @guest
-        <div id="right-item">
+        <div id="right-item" class="top-login">
           <a class="btn btn-sm logins" href="{{ route('login') }}">Inicia Sesión</a>
           <a class="btn btn-sm logins" href="{{ route('register') }}">Crear cuenta</a>
         </div>
         @else
-        <div id="left-item" class="text-left hello">
-          ¡Bienvenido {{ Auth::user()->name }}!
-        </div>
-        <div id="right-item">
+        @yield('welcome')
+        <div id="right-item" class="top-logout">
           <a class="btn btn-sm logins" href="{{ route('logout') }}" onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">Cerrar sesión</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
           </form>
         </div>
-
         @endguest
 
       </nav>
@@ -152,6 +160,22 @@
         $('#right-item').toggleClass('active');
       });
 
+      $(window).resize(function() {
+        // This will fire each time the window is resized:
+        if($(window).width() <= 768) {
+            // if larger or equal
+            $('.top-login').hide();
+            $('.top-logout').hide();
+            $('.side-login').show();
+            $('.side-logout').show();
+        } else {
+            // if smaller
+            $('.top-login').show();
+            $('.top-logout').show();
+            $('.side-login').hide();
+            $('.side-logout').hide();
+        }
+      }).resize();
 
     });
   </script>

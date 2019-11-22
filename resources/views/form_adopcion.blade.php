@@ -10,9 +10,9 @@
 
 <div class="container h-100" id="page-container">
 
-    <div class="row h-100 text-center">
+    <div class="row h-100 justify-content-center">
 
-        <div class="col-5 offset-1" id="main-title">
+        <div class="col-md-5 col-12 text-center" id="main-title">
 
             <h1 class="text-white big-font">
                 ¡Te podemos ayudar!
@@ -21,9 +21,9 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-10 offset-1">
-            <h1 class="list-title text-white text-center">Llena tus datos y los del perro</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-12">
+            <p class="text-white low-title text-center">Llena tus datos y los datos de tu perro</p>
             <form action="{{ url('adopcion') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 @include('common.errors')
@@ -39,8 +39,7 @@
 
                             <div class="col-md-6">
                                 <textarea name="motivo" id="motivoAdopcion"
-                                    class="form-control @error('motivo') is-invalid @enderror" required rows="3"
-                                    autofocus></textarea>
+                                    class="form-control @error('motivo') is-invalid @enderror" required rows="3"></textarea>
 
                                 @error('motivo')
                                 <span class="invalid-feedback" role="alert">
@@ -66,7 +65,7 @@
                             <div class="col-md-6">
                                 <input type="text" name="telefono_dueno" id="telefono_dueno"
                                     class="form-control  @error('telefono_dueno') is-invalid @enderror"
-                                    value="{{ Auth::user()->telefono }}" required autofocus>
+                                    value="{{ Auth::user()->telefono }}" required >
 
                                 @error('telefono_dueno')
                                 <span class="invalid-feedback" role="alert">
@@ -82,7 +81,7 @@
                             <div class="col-md-6">
                                 <textarea name="requisito" id="requisito"
                                     class="form-control @error('requisito') is-invalid @enderror" required rows="3"
-                                    autofocus></textarea>
+                                    ></textarea>
 
                                 @error('requisito')
                                 <span class="invalid-feedback" role="alert">
@@ -106,7 +105,7 @@
                             <div class="col-md-6">
                                 <input type="text" name="nombre_perro" id="nombre_perro"
                                     class="form-control  @error('nombre_perro') is-invalid @enderror" value="" required
-                                    autofocus>
+                                    >
 
                                 @error('nombre_perro')
                                 <span class="invalid-feedback" role="alert">
@@ -122,7 +121,7 @@
                             <div class="col-md-6">
                                 <textarea name="descripcion_color" id="descripcion_color" rows="3"
                                     class="form-control @error('motivo') is-invalid @enderror" required
-                                    autofocus></textarea>
+                                    ></textarea>
 
                                 @error('descripcion_color')
                                 <span class="invalid-feedback" role="alert">
@@ -161,7 +160,7 @@
 
                             <div class="col-md-6">
                                 <input type="number" name="edad" id="edad"
-                                    class="form-control  @error('edad') is-invalid @enderror" required autofocus min="1"
+                                    class="form-control  @error('edad') is-invalid @enderror" required  min="1"
                                     max="360">
 
                                 @error('edad')
@@ -175,19 +174,19 @@
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="esterilizado" id="esterilizado"
                                     class="form-check-input"
-                                    autofocus>
+                                    >
                                 <label for="esterilizado" class="text-dark form-check-label">Esterilizado</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="desparasitado" id="desparasitado"
                                     class="form-check-input"
-                                    autofocus>
+                                    >
                                 <label for="desparasitado" class="text-dark form-check-label">Desparasitado</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="vacunado" id="vacunado"
                                     class="form-check-input"
-                                    autofocus>
+                                    >
                                 <label for="vacunado" class="text-dark form-check-label">Vacunado</label>
                             </div>
                         </div>
@@ -198,7 +197,7 @@
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="genero" id="genero_m"
                                         class="form-check-input form-control @error('genero') is-invalid @enderror"
-                                        value="Macho" required autofocus checked>
+                                        value="Macho" required  checked>
                                     <label class="form-check-label" for="genero_m">
                                         Macho
                                     </label>
@@ -206,7 +205,7 @@
                                 <div class="form-check form-check-inline">
                                     <input type="radio" name="genero" id="genero_h"
                                         class="form-check-input form-control @error('genero') is-invalid @enderror"
-                                        value="Hembra" required autofocus>
+                                        value="Hembra" required >
                                     <label class="form-check-label" for="genero_h">
                                         Hembra
                                     </label>

@@ -90,16 +90,27 @@
 
       <ul class="list-unstyled components">
         <li id="adopcion">
-          <a href="<?php echo e(url('adopcion')); ?>">Da en Adopción</a>
+          <a href="<?php echo e(url('adopcion')); ?>">Dar en Adopción</a>
         </li>
         <li id="adoptar">
-          <a href="<?php echo e(url('adoptar')); ?>">Adopta</a>
+          <a href="<?php echo e(url('adoptar')); ?>">Adoptar</a>
         </li>
         <li id="asociacion">
           <a href="<?php echo e(url('asociacion')); ?>">Asociaciones</a>
         </li>
       </ul>
-
+      <div class="row justify-content-center">
+      <?php if(auth()->guard()->guest()): ?>
+        <a class="btn btn-sm logins side-login" href="<?php echo e(route('login')); ?>">Iniciar Sesión</a>
+        <a class="btn btn-sm logins side-login" href="<?php echo e(route('register')); ?>">Crear cuenta</a>
+      <?php else: ?>
+        <a class="btn btn-sm logins side-logout" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">Cerrar sesión</a>
+        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+          <?php echo csrf_field(); ?>
+        </form>
+      <?php endif; ?>
+      </div>
     </nav>
 
     <div id="content">
@@ -111,22 +122,19 @@
         </button>
 
         <?php if(auth()->guard()->guest()): ?>
-        <div id="right-item">
+        <div id="right-item" class="top-login">
           <a class="btn btn-sm logins" href="<?php echo e(route('login')); ?>">Inicia Sesión</a>
           <a class="btn btn-sm logins" href="<?php echo e(route('register')); ?>">Crear cuenta</a>
         </div>
         <?php else: ?>
-        <div id="left-item" class="text-left hello">
-          ¡Bienvenido <?php echo e(Auth::user()->name); ?>!
-        </div>
-        <div id="right-item">
+        <?php echo $__env->yieldContent('welcome'); ?>
+        <div id="right-item" class="top-logout">
           <a class="btn btn-sm logins" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">Cerrar sesión</a>
           <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
             <?php echo csrf_field(); ?>
           </form>
         </div>
-
         <?php endif; ?>
 
       </nav>
@@ -152,6 +160,22 @@
         $('#right-item').toggleClass('active');
       });
 
+      $(window).resize(function() {
+        // This will fire each time the window is resized:
+        if($(window).width() <= 768) {
+            // if larger or equal
+            $('.top-login').hide();
+            $('.top-logout').hide();
+            $('.side-login').show();
+            $('.side-logout').show();
+        } else {
+            // if smaller
+            $('.top-login').show();
+            $('.top-logout').show();
+            $('.side-login').hide();
+            $('.side-logout').hide();
+        }
+      }).resize();
 
     });
   </script>

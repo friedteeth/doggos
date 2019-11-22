@@ -10,9 +10,9 @@
 
 <div class="container h-100" id="page-container">
 
-  <div class="row h-100 text-center">
+  <div class="row h-100 justify-content-center">
 
-    <div class="col-5 offset-1" id="main-title">
+    <div class="col-md-5 col-12 text-center" id="main-title">
 
       <h1 class="mt-4 text-white">¡Felicidades! Tu perro
         {{ $nombre }}

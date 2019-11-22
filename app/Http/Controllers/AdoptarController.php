@@ -43,13 +43,10 @@ class AdoptarController extends Controller {
 
         $perro = Perro::find($id_perro);
 
-        $terms = Auth::user()->terminos_condiciones;
-
         return view('adoptar_perro', [
             'perro' => $perro,
             'adopcion' => $adopcion,
             'dueno' => $dueno->name,
-            'terms' => $terms
         ]);
     }
     

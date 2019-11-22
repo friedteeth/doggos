@@ -8,9 +8,9 @@
 
 <div class="container h-100" id="page-container">
 
-    <div class="row h-100 text-center">
+    <div class="row h-100 justify-content-center">
 
-        <div class="col-5 offset-1" id="main-title">
+        <div class="col-md-5 col-12 text-center" id="main-title">
             <h1 class="text-white big-font">
                 ¡Encontremos a tu nuevo amigo!
             </h1>
@@ -20,10 +20,10 @@
 
     <?php if(count($perros) > 0): ?>
 
-    <div class="row" id="dog-list">
+    <div class="row justify-content-center" id="dog-list">
 
-        <div class="col-10 offset-1 mb-3">
-            <h1 class="list-title text-white text-center">Un perro para todos</h1>
+        <div class="col-md-10 col-12 mb-3">
+            <p class="text-white low-title text-center">Un perro para todos</p>
             <?php $__currentLoopData = $perros; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $perro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
             <div class="card mb-4 shadow mt-3">
@@ -45,7 +45,7 @@
     <?php else: ?>
     <div class="row" id="dog-list">
 
-        <div class="col-10 offset-1 mb-3">
+        <div class="col-md-10 col-12 mb-3">
             <h1 class="list-title text-white text-center">Aún no hay perros disponibles</h1>
         </div>
     </div>

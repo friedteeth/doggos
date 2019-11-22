@@ -10,9 +10,9 @@
 
 <div class="container h-100">
 
-  <div class="row h-100">
+  <div class="row h-100 justify-content-center">
 
-    <div class="col-5 offset-1 text-center" id="main-title">
+    <div class="col-md-5 col-12 text-center" id="main-title">
       <h1>
         ¡Anímate!
       </h1>

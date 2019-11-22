@@ -38,10 +38,6 @@ body {
     background: #026670;
 }
 
-.terms-sm-text {
-    font-size: 0.9rem;
-}
-
 .disabled {
     pointer-events: none;
 }

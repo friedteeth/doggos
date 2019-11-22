@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->char('telefono'); 
-            $table->boolean('terminos_condiciones')->default(0);
         });
     }
 

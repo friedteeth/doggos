@@ -4,13 +4,24 @@
 
 <?php $__env->stopSection(); ?>
 
+<?php $__env->startSection('welcome'); ?>
+
+<?php if(auth()->guard()->guest()): ?>
+<?php else: ?>
+<div id="left-item" class="text-left hello">
+  ¡Bienvenido <?php echo e(Auth::user()->name); ?>!
+</div>
+<?php endif; ?>
+
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
 
 <div class="container h-100">
 
-  <div class="row h-100">
+  <div class="row h-100 justify-content-center">
 
-    <div class="col-5 offset-1 text-center" id="main-title">
+    <div class="col-md-5 col-12 text-center" id="main-title">
       <h1>
         ¡Anímate!
       </h1>

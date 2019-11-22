@@ -8,9 +8,9 @@
 
 <div class="container h-100" id="page-container">
 
-    <div class="row h-100 text-center">
+    <div class="row h-100 justify-content-center">
 
-        <div class="col-5 offset-1" id="main-title">
+        <div class="col-md-5 col-12 text-center" id="main-title">
 
             <h1 class="text-white big-font">
                 ¡Te podemos ayudar!
@@ -19,9 +19,9 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-10 offset-1">
-            <h1 class="list-title text-white text-center">Llena tus datos y los del perro</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-12">
+            <p class="text-white low-title text-center">Llena tus datos y los datos de tu perro</p>
             <form action="<?php echo e(url('adopcion')); ?>" method="POST" class="form-horizontal" enctype="multipart/form-data">
                 <?php echo e(csrf_field()); ?>
 
@@ -45,8 +45,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" required rows="3"
-                                    autofocus></textarea>
+unset($__errorArgs, $__bag); ?>" required rows="3"></textarea>
 
                                 <?php $__errorArgs = ['motivo'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -86,7 +85,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                    value="<?php echo e(Auth::user()->telefono); ?>" required autofocus>
+                                    value="<?php echo e(Auth::user()->telefono); ?>" required >
 
                                 <?php $__errorArgs = ['telefono_dueno'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -116,7 +115,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" required rows="3"
-                                    autofocus></textarea>
+                                    ></textarea>
 
                                 <?php $__errorArgs = ['requisito'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -154,7 +153,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" value="" required
-                                    autofocus>
+                                    >
 
                                 <?php $__errorArgs = ['nombre_perro'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -184,7 +183,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" required
-                                    autofocus></textarea>
+                                    ></textarea>
 
                                 <?php $__errorArgs = ['descripcion_color'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -244,7 +243,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" required autofocus min="1"
+unset($__errorArgs, $__bag); ?>" required  min="1"
                                     max="360">
 
                                 <?php $__errorArgs = ['edad'];
@@ -265,19 +264,19 @@ unset($__errorArgs, $__bag); ?>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="esterilizado" id="esterilizado"
                                     class="form-check-input"
-                                    autofocus>
+                                    >
                                 <label for="esterilizado" class="text-dark form-check-label">Esterilizado</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="desparasitado" id="desparasitado"
                                     class="form-check-input"
-                                    autofocus>
+                                    >
                                 <label for="desparasitado" class="text-dark form-check-label">Desparasitado</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input type="checkbox" name="vacunado" id="vacunado"
                                     class="form-check-input"
-                                    autofocus>
+                                    >
                                 <label for="vacunado" class="text-dark form-check-label">Vacunado</label>
                             </div>
                         </div>
@@ -295,7 +294,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                        value="Macho" required autofocus checked>
+                                        value="Macho" required  checked>
                                     <label class="form-check-label" for="genero_m">
                                         Macho
                                     </label>
@@ -310,7 +309,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                        value="Hembra" required autofocus>
+                                        value="Hembra" required >
                                     <label class="form-check-label" for="genero_h">
                                         Hembra
                                     </label>

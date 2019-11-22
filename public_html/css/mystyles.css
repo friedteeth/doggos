@@ -42,12 +42,12 @@ body {
     color: #EDEAE5;
     background: #026670;
     border-radius: 40px;
-    border: 2px solid #026670;
+    border: 2px solid hsl(185, 96%, 22%);
     transition: all 0.3s;
 }
 
 .logins:not([disabled]):hover {
-    color: #026670;
+    color: #026670 !important;
     background: #EDEAE5;
     border-radius: 40px;
     border: 2px solid #026670;
@@ -180,10 +180,13 @@ a:focus {
     overflow: scroll;
 }
 
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
+#main-title {
+    padding-top: 180px;
+    opacity: 0.9;
+}
+.low-title {
+    font-size: 65px;
+}
 
 @media (max-width: 768px) {
     #sidebar {
@@ -201,5 +204,12 @@ a:focus {
     }
     #sidebarCollapse span {
         display: none;
+    }
+    #main-title {
+        padding-top: 100px;
+        opacity: 0.9;
+    }
+    .low-title {
+        font-size: 30px;
     }
 }

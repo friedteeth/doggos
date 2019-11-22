@@ -1,23 +1,22 @@
-@extends('main')
+<?php $__env->startSection('styles'); ?>
 
-@section('styles')
+<link href="<?php echo e(asset('css/adoptar_perro.style.css')); ?>" rel="stylesheet" type="text/css">
 
-<link href="{{ asset('css/adoptar_perro.style.css') }}" rel="stylesheet" type="text/css">
+<?php $__env->stopSection(); ?>
 
-@endsection
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class="container-fluid h-100">
     <div class="row align-items-center h-100">
         <div class="col-12 text-center">
             <h1 class="dog-title">
-                {{ $perro->nombre_perro }}
+                <?php echo e($perro->nombre_perro); ?>
+
             </h1>
         </div>
 
         <div class="col-md-4 col-12 pb-3">
-            <img src="{{ url('storage/'.$perro->imagen_perro) }}"
+            <img src="<?php echo e(url('storage/'.$perro->imagen_perro)); ?>"
                 class="img-thumbnail rounded-lg shadow imagen-perro p-0 m-0">
         </div>
         <div class="col-md-8 col-12 pr-3">
@@ -25,49 +24,52 @@
                 <div class="col-md-4 col-sm-6 col-12">
                     <h4>Complexión:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
-                        {{ $perro->complexion }}
+                        <?php echo e($perro->complexion); ?>
+
                     </li>
                 </div>
                 <div class="col-md-8 col-sm-6 col-12">
                     <h4>Descripción de colores:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
-                        {{ $perro->descripcion_color }}
+                        <?php echo e($perro->descripcion_color); ?>
+
                     </li>
                 </div>
             </div>
             <div class="row pb-3">
-                @if ($perro->esterilizado == 1 || $perro->vacunado == 1 || $perro->desparasitado == 1)
+                <?php if($perro->esterilizado == 1 || $perro->vacunado == 1 || $perro->desparasitado == 1): ?>
                     <div class="col">
                         <h4>Estado:</h4>
                         <ul class="list-group">
-                            @if ($perro->esterilizado == 1)
+                            <?php if($perro->esterilizado == 1): ?>
                                 <li class="list-group-item bg-transparent rounded shadow mb-1">
                                     Esterilizado
                                 </li>
-                            @endif
-                            @if ($perro->desparasitado == 1)
+                            <?php endif; ?>
+                            <?php if($perro->desparasitado == 1): ?>
                                 <li class="list-group-item bg-transparent rounded shadow mb-1">
                                     Desparacitado
                                 </li>
-                            @endif
-                            @if ($perro->vacunado == 1)
+                            <?php endif; ?>
+                            <?php if($perro->vacunado == 1): ?>
                                 <li class="list-group-item bg-transparent rounded shadow">
                                     Vacunado
                                 </li>
-                            @endif
+                            <?php endif; ?>
                         </ul>
                     </div>
-                @endif
+                <?php endif; ?>
                 <div class="col">
                     <h4>Edad:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
-                        {{ $perro->edad }} meses
+                        <?php echo e($perro->edad); ?> meses
                     </li>
                 </div>
                 <div class="col">
                     <h4>Género:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
-                        {{ $perro->genero }}
+                        <?php echo e($perro->genero); ?>
+
                     </li>
                 </div>
             </div>
@@ -75,20 +77,22 @@
                 <div class="col">
                     <h4>Comportamiento:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
-                        {{ $perro->comportamiento }}
+                        <?php echo e($perro->comportamiento); ?>
+
                     </li>
                 </div>
                 <div class="col">
                     <h4>Otros detalles:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
-                        {{ $perro->otros_detalles }}
+                        <?php echo e($perro->otros_detalles); ?>
+
                     </li>
                 </div>
             </div>
             
 
             <br><br>
-            <a href="{{ url()->previous() }}" class="btn logins-return">Regresar</a>
+            <a href="<?php echo e(url()->previous()); ?>" class="btn logins-return">Regresar</a>
             <button type="button" class="btn logins" data-toggle="modal" data-target="#mod">
                 ¡Adóptame!
             </button>
@@ -99,7 +103,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
 
-                    @guest
+                    <?php if(auth()->guard()->guest()): ?>
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Espera un momento...</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -110,11 +114,11 @@
                         <p>Debes estar registrado para conocer los datos de contacto del dueño.</p>
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ route('login') }}" class="btn logins">Iniciar sesión</a>
-                        <a href="{{ route('register') }}" class="btn logins">Crear cuenta</a>
+                        <a href="<?php echo e(route('login')); ?>" class="btn logins">Iniciar sesión</a>
+                        <a href="<?php echo e(route('register')); ?>" class="btn logins">Crear cuenta</a>
                         <button type="button" class="btn logins-return" data-dismiss="modal">Cerrar</button>
                     </div>
-                    @else
+                    <?php else: ?>
                         <div class="modal-header info-title">
                             <h2 class="modal-title text-white" id="exampleModalLabel">Información de contacto</h2>
                             
@@ -122,18 +126,20 @@
                         <div class="modal-body">
                             <h5>Nombre del dueño:</h5>
                             <li class="list-group-item bg-transparent rounded shadow mb-3">
-                                {{ $dueno }}
+                                <?php echo e($dueno); ?>
+
                             </li>
                             <h5>Teléfono:</h5>
                             <li class="list-group-item bg-transparent rounded shadow">
-                                {{ $adopcion->telefono_dueno }}
+                                <?php echo e($adopcion->telefono_dueno); ?>
+
                             </li>
                         </div>
                         <div class="modal-footer">
                             <button data-dismiss="modal" type="button" class="btn logins-return">Cerrar</button>
                         </div>
 
-                    @endguest
+                    <?php endif; ?>
 
                 </div>
             </div>
@@ -142,4 +148,5 @@
 
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\loera\laravel\adopta_mi_perro\resources\views/adoptar_perro.blade.php ENDPATH**/ ?>
