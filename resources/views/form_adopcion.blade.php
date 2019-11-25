@@ -63,7 +63,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Maximo 500 caracteres.
+                                    Máximo 500 caracteres.
                                 </small>
                             </div>
 
@@ -112,7 +112,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Debe tener 10 digitos.
+                                    Debe tener 10 dígitos.
                                 </small>
                             </div>
 
@@ -145,7 +145,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Maximo 500 caracteres.
+                                    Máximo 500 caracteres.
                                 </small>
                             </div>
 
@@ -188,7 +188,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Maximo 20 caracteres.
+                                    Máximo 20 caracteres.
                                 </small>
                             </div>
 
@@ -220,7 +220,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Maximo 100 caracteres.
+                                    Máximo 100 caracteres.
                                 </small>
                             </div>
 
@@ -285,7 +285,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Edad maxima es de 180 meses.
+                                    Edad máxima es de 180 meses.
                                 </small>
                             </div>
 
@@ -398,7 +398,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Maximo 500 caracteres.
+                                    Máximo 500 caracteres.
                                 </small>
                             </div>
 
@@ -429,7 +429,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Maximo 500 caracteres.
+                                    Máximo 500 caracteres.
                                 </small>
                             </div>
 
@@ -463,7 +463,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    El archivo puede pesar maximo 5 MB.
+                                    El archivo puede pesar máximo 5 MB.
                                 </small>
                             </div>
 
