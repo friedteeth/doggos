@@ -35,12 +35,9 @@ class AdoptarController extends Controller {
     /**
      * Este metodo se encarga de mostrar a detalle la informacion de un perro
      */
-    public function show($id_adopcion) {
-        $adopcion = Adopcion::find($id_adopcion);
+    public function show($id_perro) {
+        $adopcion = Adopcion::where('id_perro', $id_perro)->first();
         $dueno = User::find($adopcion->id_dueno);
-        $id_perro = $adopcion->id;
-
-
         $perro = Perro::find($id_perro);
 
         return view('adoptar_perro', [

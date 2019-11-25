@@ -16,7 +16,7 @@ class CreaTablaAsociacion extends Migration
         Schema::create('asociacions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre_asociacion');
-            $table->char('telefono', 10);
+            $table->char('telefono', 10)->nullable();
             $table->string('actividades');
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();

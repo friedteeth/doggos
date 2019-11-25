@@ -10,7 +10,7 @@
     <div class="row align-items-center h-100">
         <div class="col-12 text-center">
             <h1 class="dog-title">
-                <?php echo e($perro->nombre_perro); ?>
+                <?php echo e($perro->nombre_perro ?? 'Perro sin nombre'); ?>
 
             </h1>
         </div>
@@ -48,7 +48,7 @@
                             <?php endif; ?>
                             <?php if($perro->desparasitado == 1): ?>
                                 <li class="list-group-item bg-transparent rounded shadow mb-1">
-                                    Desparacitado
+                                    Desparasitado
                                 </li>
                             <?php endif; ?>
                             <?php if($perro->vacunado == 1): ?>
@@ -59,12 +59,14 @@
                         </ul>
                     </div>
                 <?php endif; ?>
+                <?php if(!is_null($perro->edad)): ?>
                 <div class="col">
                     <h4>Edad:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
                         <?php echo e($perro->edad); ?> meses
                     </li>
                 </div>
+                <?php endif; ?>
                 <div class="col">
                     <h4>Género:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
@@ -74,6 +76,7 @@
                 </div>
             </div>
             <div class="row pb-3">
+                <?php if(!is_null($perro->comportamiento)): ?>
                 <div class="col">
                     <h4>Comportamiento:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
@@ -81,6 +84,8 @@
 
                     </li>
                 </div>
+                <?php endif; ?>
+                <?php if(!is_null($perro->otros_detalles)): ?>
                 <div class="col">
                     <h4>Otros detalles:</h4>
                     <li class="list-group-item bg-transparent rounded shadow">
@@ -88,8 +93,19 @@
 
                     </li>
                 </div>
+                <?php endif; ?>
             </div>
-            
+            <?php if(!is_null($adopcion->requisito)): ?>
+            <div class="row pb-3">
+                <div class="col">
+                    <h4>Requisitos para adopción:</h4>
+                    <li class="list-group-item bg-transparent rounded shadow">
+                        <?php echo e($adopcion->requisito); ?>
+
+                    </li>
+                </div>
+            </div>
+            <?php endif; ?>
 
             <br><br>
             <a href="<?php echo e(url()->previous()); ?>" class="btn logins-return">Regresar</a>

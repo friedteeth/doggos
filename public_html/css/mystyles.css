@@ -176,6 +176,10 @@ a:focus {
     font-size: 2rem;
 }
 
+.doggo-i {
+    width: 50px;
+}
+
 .modal-open {
     overflow: scroll;
 }

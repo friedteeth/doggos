@@ -29,33 +29,40 @@ class AdopcionController extends Controller {
      */
     public function store(Request $request) {
         $validator = Validator::make($request->all(), [
-            'telefono_dueno' => 'required|regex:/[0-9]{10}/',
-            'motivo' => 'required|max:510',
-            'requisito' => 'required|max:510',
-            'nombre_perro' => 'required|max:50',
-            'descripcion_color' => 'required|max:300',
+            'telefono_dueno' => 'required|regex:/^[0-9]{10}$/',
+            'motivo' => 'required|max:500',
+            'requisito' => 'nullable|max:500',
+            'nombre_perro' => 'nullable|max:20',
+            'descripcion_color' => 'required|max:100',
             'complexion' => 'required',
-            'edad' => 'required|min:1|max:360',
+            'edad' => 'nullable|numeric|between:1,180',
             'genero' => 'required',
-            'otros_detalles' => 'required|max:510',
-            'comportamiento' => 'required|max:510',
+            'otros_detalles' => 'nullable|max:500',
+            'comportamiento' => 'nullable|max:500',
             'imagen_perro' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120',
         ]);
     
         if($validator->fails()) {
             return redirect('/adopcion')
-                ->withInput()
+                ->with('err', 'true')
+                ->withInput($request->input())
                 ->withErrors($validator);
         }
-    
-        //Inicialmente se almacena un perro
 
         $perro = new Perro;
         
-        $perro->nombre_perro = $request->nombre_perro;
+        if($request->has('nombre_perro')) {
+            $perro->nombre_perro = $request->nombre_perro;
+        } else {
+            $perro->nombre_perro = null;
+        }
         $perro->descripcion_color = $request->descripcion_color;
         $perro->complexion = $request->complexion;
-        $perro->edad = $request->edad;
+        if($request->has('edad')) {
+            $perro->edad = $request->edad;
+        } else {
+            $perro->edad = null;
+        }
         if($request->has('esterilizado')) {
             $perro->esterilizado = true;
         } else {
@@ -72,8 +79,16 @@ class AdopcionController extends Controller {
             $perro->vacunado = false;
         }
         $perro->genero = $request->genero;
-        $perro->otros_detalles = $request->otros_detalles;
-        $perro->comportamiento = $request->comportamiento;
+        if($request->has('otros_detalles')) {
+            $perro->otros_detalles = $request->otros_detalles;
+        } else {
+            $perro->otros_detalles = null;
+        }
+        if($request->has('comportamiento')) {
+            $perro->comportamiento = $request->comportamiento;
+        } else {
+            $perro->comportamiento = null;
+        }
         $imagen = $request->file('imagen_perro');
         $file_name = $perro->nombre_perro.'_'.time();
         $folder = 'perros/imagenes/';
@@ -90,7 +105,11 @@ class AdopcionController extends Controller {
         $adopcion->id_perro = $perro->id;
         $adopcion->telefono_dueno = $request->telefono_dueno;
         $adopcion->motivo_adopcion = $request->motivo;
-        $adopcion->requisito_adopcion = $request->requisito;
+        if($request->has('requisito')){
+            $adopcion->requisito_adopcion = $request->requisito;
+        } else {
+            $adopcion->requisito_adopcion = null;
+        }
         $adopcion->save();
     
         return view('adopcion', [

@@ -8,6 +8,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
+            <p class="text-warning text-center">Todos campos con un asterisco (*), son obligatorios</p>
             <div class="card">
                 <div class="card-header text-dark">
                     <h3>
@@ -20,7 +21,7 @@
                         <?php echo csrf_field(); ?>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right text-dark">Nombre
+                            <label for="name" class="col-md-3 col-form-label text-md-right text-dark">*Nombre
                                 completo:</label>
 
                             <div class="col-md-6">
@@ -32,25 +33,30 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                    name="name" value="<?php echo e(old('name')); ?>" required autocomplete="name" autofocus>
+                                    name="name" value="<?php echo e(old('name')); ?>" autocomplete="name" autofocus>
+                            </div>
 
-                                <?php $__errorArgs = ['name'];
+                            <div class="col-md-3">
+                                <small class="text-muted">
+                                    Maximo 50 caracteres.
+                                </small>
+                            </div>
+
+                            <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($message); ?></strong>
-                                </span>
-                                <?php unset($message);
+                                <div class="col-md-6 offset-3 text-danger"><?php echo e($message); ?></div>
+                                <div class="col-md-3"></div>
+                            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                            </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right text-dark">Correo
+                            <label for="email" class="col-md-3 col-form-label text-md-right text-dark">*Correo
                                 electrónico:</label>
 
                             <div class="col-md-6">
@@ -62,26 +68,31 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                    name="email" value="<?php echo e(old('email')); ?>" required autocomplete="email">
+                                    name="email" value="<?php echo e(old('email')); ?>" autocomplete="email">
+                            </div>
 
-                                <?php $__errorArgs = ['email'];
+                            <div class="col-md-3">
+                                <small class="text-muted">
+                                    Maximo 50 caracteres.
+                                </small>
+                            </div>
+
+                            <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($message); ?></strong>
-                                </span>
-                                <?php unset($message);
+                                <div class="col-md-6 offset-3 text-danger"><?php echo e($message); ?></div>
+                                <div class="col-md-3"></div>
+                            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                            </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="telefono"
-                                class="col-md-4 col-form-label text-md-right text-dark">Teléfono:</label>
+                                class="col-md-3 col-form-label text-md-right text-dark">*Teléfono:</label>
 
                             <div class="col-md-6">
                                 <input id="telefono" type="tel"
@@ -93,26 +104,31 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" name="telefono"
-                                    value="" required autocomplete="off" pattern="[0-9]{10}">
+                                    value="<?php echo e(old('telefono')); ?>" autocomplete="off" pattern="[0-9]{10}">
+                            </div>
 
-                                <?php $__errorArgs = ['telefono'];
+                            <div class="col-md-3">
+                                <small class="text-muted">
+                                    Debe tener 10 digitos.
+                                </small>
+                            </div>
+
+                            <?php $__errorArgs = ['telefono'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($message); ?></strong>
-                                </span>
-                                <?php unset($message);
+                                <div class="col-md-6 offset-3 text-danger"><?php echo e($message); ?></div>
+                                <div class="col-md-3"></div>
+                            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                            </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="password"
-                                class="col-md-4 col-form-label text-md-right text-dark">Contraseña:</label>
+                                class="col-md-3 col-form-label text-md-right text-dark">*Contraseña:</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password"
@@ -124,36 +140,41 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" name="password"
-                                    required autocomplete="new-password">
+                                 autocomplete="new-password">
+                            </div>
+                            
+                            <div class="col-md-3">
+                                <small class="text-muted">
+                                    La contraseña debe contener minimo 8 caracteres y maximo 16.
+                                </small>
+                            </div>
 
-                                <?php $__errorArgs = ['password'];
+                            <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <span class="invalid-feedback" role="alert">
-                                    <strong><?php echo e($message); ?></strong>
-                                </span>
-                                <?php unset($message);
+                                <div class="col-md-6 offset-3 text-danger"><?php echo e($message); ?></div>
+                                <div class="col-md-3"></div>
+                            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                            </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="password-confirm"
-                                class="col-md-4 col-form-label text-md-right text-dark">Confirmar contraseña:</label>
+                                class="col-md-3 col-form-label text-md-right text-dark">*Confirmar contraseña:</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required autocomplete="new-password">
+                                    name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn logins">
                                     Crear cuenta
                                 </button>
                             </div>
