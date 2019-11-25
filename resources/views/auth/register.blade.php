@@ -33,7 +33,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Maximo 50 caracteres.
+                                    Máximo 50 caracteres.
                                 </small>
                             </div>
 
@@ -54,7 +54,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Maximo 50 caracteres.
+                                    Máximo 50 caracteres.
                                 </small>
                             </div>
 
@@ -76,7 +76,7 @@
 
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    Debe tener 10 digitos.
+                                    Debe tener 10 dígitos.
                                 </small>
                             </div>
 
@@ -98,7 +98,7 @@
                             
                             <div class="col-md-3">
                                 <small class="text-muted">
-                                    La contraseña debe contener minimo 8 caracteres y maximo 16.
+                                    La contraseña debe contener mínimo 8 caracteres y máximo 16.
                                 </small>
                             </div>
 
