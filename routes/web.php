@@ -25,7 +25,7 @@ Route::resource('/registro', 'RegistroController');
 
 Route::get('storage/perros/imagenes/{filename}', function ($filename)
 {
-    $path = storage_path('app/public_html/perros/imagenes/' . $filename);
+    $path = storage_path('app/public/perros/imagenes/' . $filename);
 
     if (!File::exists($path)) {
         abort(404);
@@ -42,7 +42,7 @@ Route::get('storage/perros/imagenes/{filename}', function ($filename)
 
 Route::get('storage/asociaciones/imagenes/{filename}', function ($filename)
 {
-    $path = storage_path('app/public_html/asociaciones/imagenes/' . $filename);
+    $path = storage_path('app/public/asociaciones/imagenes/' . $filename);
 
     if (!File::exists($path)) {
         abort(404);
@@ -59,7 +59,7 @@ Route::get('storage/asociaciones/imagenes/{filename}', function ($filename)
 
 Route::get('storage/stock/{filename}', function ($filename)
 {
-    $path = storage_path('app/public_html/stock/' . $filename);
+    $path = storage_path('app/public/stock/' . $filename);
 
     if (!File::exists($path)) {
         abort(404);
